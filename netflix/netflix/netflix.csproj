@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.2.0" />
+    <PackageReference Include="OpenSilver.Themes.Modern" Version="3.2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Geometries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\GradientHoverButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\IconButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\PlaceHolderTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\VideoPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Main\FrontPageVideo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Main\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Main\TopMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="Converter\BoolToVisibleConverter.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\MediaInfo.cs" />
+    <Compile Include="Models\RecommendationList.cs" />
+    <Compile Include="Regions\DialogNames.cs" />
+    <Compile Include="Regions\RegionNames.cs" />
+    <Compile Include="Regions\ViewNames.cs" />
+    <Compile Include="Themes\Units\GradientHoverButton.cs" />
+    <Compile Include="Themes\Units\IconButton.cs" />
+    <Compile Include="Themes\Units\PlaceHolderTextBox.cs" />
+    <Compile Include="Themes\Units\VideoPreview.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\LoginView.xaml.cs" />
+    <Compile Include="Views\Main\FrontPageVideo.xaml.cs" />
+    <Compile Include="Views\Main\MainView.xaml.cs" />
+    <Compile Include="Views\Main\TopMenu.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\netflix.Core\netflix_opensilver.Core.csproj" />
+  </ItemGroup>
+
+</Project>

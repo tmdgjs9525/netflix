@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+	<ItemGroup>
+    <Compile Include="Container.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="Dialog\DialogBase.xaml.cs" />
+    <Compile Include="Dialog\DialogResult.cs" />
+    <Compile Include="Dialog\DialogService.cs" />
+    <Compile Include="Dialog\IDialogService.cs" />
+    <Compile Include="Navigate\INavigationService.cs" />
+    <Compile Include="Navigate\NavigationService.cs" />
+    <Compile Include="Parameter\Parameters.cs" />
+    <Compile Include="Region\RegionManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
+    <PackageReference Include="OpenSilver" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Dialog\DialogBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

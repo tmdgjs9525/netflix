@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnvtrs="clr-namespace:netflix.Converter"
+    xmlns:units="clr-namespace:netflix.Themes.Units">
+    <cnvtrs:BoolToVisibleConverter x:Key="BoolToVisibleConverter" />
+    <Style TargetType="units:IconButton">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="units:IconButton">
+                    <Border
+                        x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <StackPanel
+                            Margin="10,10,10,10"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Viewbox
+                                Width="{TemplateBinding IconSize}"
+                                Height="{TemplateBinding IconSize}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                <Path
+                                    Data="{TemplateBinding Icon}"
+                                    Fill="{TemplateBinding Fill}"
+                                    Stretch="Fill" />
+                            </Viewbox>
+                            <ContentPresenter
+                                x:Name="content"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Visibility="{Binding UseText, RelativeSource={RelativeSource AncestorType=units:IconButton}, Converter={StaticResource BoolToVisibleConverter}}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

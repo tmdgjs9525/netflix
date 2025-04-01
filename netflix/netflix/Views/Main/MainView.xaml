@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="netflix.Views.Main.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix.Views.Main"
+    xmlns:units="clr-namespace:netflix.Themes.Units">
+
+    <ScrollViewer Background="{StaticResource MainBackgroundBrush}" VerticalScrollBarVisibility="Visible">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68" />
+                <RowDefinition Height="700" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <local:FrontPageVideo Grid.Row="0" Grid.RowSpan="2" />
+
+            <local:TopMenu Grid.Row="0" />
+
+            <StackPanel
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
+                    Margin="50,-50,0,0">
+                <TextBlock
+                        Margin="10,0,0,0"
+                        FontSize="24"
+                        Foreground="White"
+                        Text="{Binding Test.RecommendationListName}" />
+
+                <ScrollViewer Background="Blue" HorizontalScrollBarVisibility="Auto">
+                    <ItemsControl Margin="0,0,0,0" ItemsSource="{Binding Test.RecommendList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <units:VideoPreview />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                
+
+                <!--  빈 영역  -->
+                <Border Grid.Row="2" Height="300" />
+            </StackPanel>
+
+
+        </Grid>
+    </ScrollViewer>
+
+</UserControl>

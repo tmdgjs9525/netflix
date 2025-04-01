@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix">
+
+    <Color x:Key="MainBackground">#141414</Color>
+    <Color x:Key="LogoForeGround">#E50914</Color>
+    
+    <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackground}" />
+    <SolidColorBrush x:Key="LogoForeGroundBrush" Color="{StaticResource LogoForeGround}" />
+</ResourceDictionary>

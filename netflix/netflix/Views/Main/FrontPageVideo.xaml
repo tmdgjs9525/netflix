@@ -1,0 +1,64 @@
+﻿<UserControl
+    x:Class="netflix.Views.Main.FrontPageVideo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix.Views.Main"
+    xmlns:units="clr-namespace:netflix.Themes.Units">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Grid.RowSpan="2"
+            Source="{Binding RecommendedItem.PosterUrl}"
+            Stretch="UniformToFill" />
+
+        <StackPanel Grid.Row="1" Margin="50,0,50,0">
+            <TextBlock
+                FontSize="24"
+                Foreground="White"
+                Text="{Binding RecommendedItem.Description}" />
+            <StackPanel Orientation="Horizontal">
+                <units:IconButton
+                    Width="120"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Background="White"
+                    Content="재생"
+                    Fill="Black"
+                    FontSize="24"
+                    Foreground="Black"
+                    Icon="{StaticResource PlayIcon}"
+                    IconSize="24" />
+                <units:IconButton
+                    Width="150"
+                    Height="50"
+                    Margin="20,0,0,0"
+                    HorizontalAlignment="Left"
+                    Background="Gray"
+                    Content="상세 정보"
+                    Fill="#AAFFFFFF"
+                    FontSize="24"
+                    Foreground="#AAFFFFFF"
+                    Icon="{StaticResource InfoIcon}"
+                    IconSize="24" />
+            </StackPanel>
+        </StackPanel>
+
+        <Border
+            Grid.Row="1"
+            Height="300"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="1" Color="#AA000000" />
+                    <GradientStop Offset="0.8" Color="Transparent" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Grid>
+</UserControl>
