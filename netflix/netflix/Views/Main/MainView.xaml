@@ -18,14 +18,14 @@
             <local:TopMenu Grid.Row="0" />
 
             <StackPanel
-                    Grid.Row="2"
-                    Grid.RowSpan="2"
-                    Margin="50,-50,0,0">
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Margin="50,-50,0,0">
                 <TextBlock
-                        Margin="10,0,0,0"
-                        FontSize="24"
-                        Foreground="White"
-                        Text="{Binding Test.RecommendationListName}" />
+                    Margin="10,0,0,0"
+                    FontSize="24"
+                    Foreground="White"
+                    Text="{Binding Test.RecommendationListName}" />
 
                 <ScrollViewer Background="Blue" HorizontalScrollBarVisibility="Auto">
                     <ItemsControl Margin="0,0,0,0" ItemsSource="{Binding Test.RecommendList}">
@@ -41,12 +41,10 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                
 
                 <!--  빈 영역  -->
                 <Border Grid.Row="2" Height="300" />
             </StackPanel>
-
 
         </Grid>
     </ScrollViewer>
