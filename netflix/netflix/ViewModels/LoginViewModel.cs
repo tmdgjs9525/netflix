@@ -25,8 +25,8 @@ namespace netflix.ViewModels
         [RelayCommand]
         private void Login()
         {
-            Application.Current.Host.NavigationState = "/MainView";
-            //_navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
+            //App.Navigate(ViewNames.MainView);
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
         }
     }
 }

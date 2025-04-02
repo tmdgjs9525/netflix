@@ -86,7 +86,7 @@
             <RadioButton Content="시리즈" Style="{StaticResource menuButton}" />
             <RadioButton Content="영화" Style="{StaticResource menuButton}" />
             <RadioButton Content="NEW! 요즘 대세 콘텐츠" Style="{StaticResource menuButton}" />
-            <RadioButton Content="내가 찜한 리스트" Style="{StaticResource menuButton}" />
+            <RadioButton Content="내가 찜한 리스트" Style="{StaticResource menuButton}" Command="{Binding GoBookMarkedCommand}"/>
             <RadioButton Content="언어 별로 찾아보기" Style="{StaticResource menuButton}" />
         </StackPanel>
     </Grid>

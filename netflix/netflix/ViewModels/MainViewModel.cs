@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Navigate;
 using netflix.Models;
+using netflix.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,7 +50,13 @@ namespace netflix.ViewModels
         [RelayCommand]
         private void GoHome()
         {
-            Application.Current.Host.NavigationState = "/MainView";
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
+        }
+
+        [RelayCommand]
+        private void GoBookMarked()
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.BookMarkedView);
         }
 
         private static ObservableCollection<VideoInfo> GetVideoInfos()

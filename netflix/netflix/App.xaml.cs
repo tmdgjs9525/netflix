@@ -5,6 +5,7 @@ using netflix.Core.Navigate;
 using netflix.Regions;
 using netflix.ViewModels;
 using netflix.Views;
+using netflix.Views.BookMark;
 using netflix.Views.Main;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,15 @@ namespace netflix
 {
     public sealed partial class App : Application
     {
+        private readonly INavigationService _navigationService;
+
         public App()
         {
             this.InitializeComponent();
 
             IServiceProvider provider = serviceInitialize();
+
+            _navigationService = provider.GetRequiredService<INavigationService>();
 
             var mainView = provider.GetRequiredService<MainPage>();
             mainView.DataContext = provider.GetRequiredService<MainPageViewModel>();
@@ -37,17 +42,7 @@ namespace netflix
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-            Application.Current.Host.NavigationStateChanged += Host_NavigationStateChanged;
-            Application.Current.Host.NavigationState = "/LoginView";
-            Host_NavigationStateChanged(this, new System.Windows.Interop.NavigationStateChangedEventArgs("", "/LoginView"));
-
-        }
-
-        private void Host_NavigationStateChanged(object sender, System.Windows.Interop.NavigationStateChangedEventArgs e)
-        {
-            Console.WriteLine("ev");
-
-            HandleNavigation(e.NewNavigationState);
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
         private void HandleNavigation(string newUrl)
@@ -64,7 +59,7 @@ namespace netflix
             var rootVisual = Application.Current.RootVisual as Page; 
 
             // 루트 그리드에 페이지 추가
-            if (rootVisual.Content is TransitioningContentControl contentControl)
+            if (rootVisual.Content is ContentControl contentControl)
             {
                 contentControl.Content = control;
             }
@@ -94,6 +89,7 @@ namespace netflix
 
             container.AddSingletonNavigation<LoginView, LoginViewModel>();
             container.AddSingletonNavigation<MainView, MainViewModel>();
+            container.AddSingletonNavigation<BookMarkedView, BookMarkedViewModel>();
 
             return services.BuildServiceProvider();
         }

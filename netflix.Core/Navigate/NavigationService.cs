@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System;
+using System.Windows;
 
 namespace netflix.Core.Navigate
 {
@@ -72,6 +73,7 @@ namespace netflix.Core.Navigate
             //Region Navigate
             _regionDictionary[regionName].Content = control;
 
+            Application.Current.Host.NavigationState = viewName;
             // TODO : 로깅
         }
 

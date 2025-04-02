@@ -8,7 +8,8 @@ namespace netflix.Regions
 {
     public class ViewNames
     {
-        public static string LoginView = nameof(LoginView);
-        public static string MainView = nameof(MainView);
+        public static string LoginView = "LoginView";
+        public static string MainView = "MainView";
+        public static string BookMarkedView = "BookMarkedView";
     }
 }

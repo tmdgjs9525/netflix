@@ -27,7 +27,7 @@
                     Foreground="White"
                     Text="{Binding Test.RecommendationListName}" />
 
-                <ScrollViewer Background="Blue" HorizontalScrollBarVisibility="Auto">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <ItemsControl Margin="0,0,0,0" ItemsSource="{Binding Test.RecommendList}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
