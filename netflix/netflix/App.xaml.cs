@@ -45,26 +45,6 @@ namespace netflix
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
-        private void HandleNavigation(string newUrl)
-        {
-            var navigationRegister = Ioc.Default.GetRequiredService<INavigationRegister>();
-            var viewDictionary = navigationRegister.GetViewDictionary();
-
-            // URL에서 페이지 이름 추출
-            string pageName = newUrl.Trim('/');
-
-            var control = Ioc.Default.GetRequiredService(viewDictionary[pageName].Item1) as UserControl;
-            control.DataContext = Ioc.Default.GetRequiredService(viewDictionary[pageName].Item2);
-
-            var rootVisual = Application.Current.RootVisual as Page; 
-
-            // 루트 그리드에 페이지 추가
-            if (rootVisual.Content is ContentControl contentControl)
-            {
-                contentControl.Content = control;
-            }
-        }
-
         private IServiceProvider serviceInitialize()
         {
             ServiceCollection services = new ServiceCollection();
@@ -89,6 +69,7 @@ namespace netflix
 
             container.AddSingletonNavigation<LoginView, LoginViewModel>();
             container.AddSingletonNavigation<MainView, MainViewModel>();
+            container.AddSingletonNavigation<MainContentView, MainContentViewModel>();
             container.AddSingletonNavigation<BookMarkedView, BookMarkedViewModel>();
 
             return services.BuildServiceProvider();

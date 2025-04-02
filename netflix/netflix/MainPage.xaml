@@ -9,5 +9,5 @@
     Foreground="{DynamicResource Theme_TextBrush}"
     mc:Ignorable="d">
 
-    <TransitioningContentControl x:Name="rootVisal" RegionManager:RegionManager.RegionName="MainRegion" />
+    <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
 </Page>
