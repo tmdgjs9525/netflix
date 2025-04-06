@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Controls;
-using netflix.Core.Parameter;
+using netflix.Core;
+using netflix.Parameter;
 
-namespace netflix.Core.Dialog
+namespace netflix.Dialog
 {
     public interface IDialogService
     {
@@ -14,9 +15,9 @@ namespace netflix.Core.Dialog
     public interface IDialogRegister
     {
         public void AddTransientDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware;
+                                                            where TViewModel : IViewModelBase, IDialogAware;
         public void AddSingletonDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware;
+                                                            where TViewModel : IViewModelBase, IDialogAware;
     }
 
     public interface IDialogResult

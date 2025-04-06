@@ -1,10 +1,11 @@
 ﻿using System.Windows.Controls;
-using netflix.Core.Dialog;
-using netflix.Core.Navigate;
+using netflix.Core;
+using netflix.Dialog;
+using netflix.Navigate;
 using Microsoft.Extensions.DependencyInjection;
-using NavigationService = netflix.Core.Navigate.NavigationService;
+using NavigationService = netflix.Navigate.NavigationService;
 
-namespace netflix.Core
+namespace netflix
 {
     public class Container
     {
@@ -17,37 +18,37 @@ namespace netflix.Core
             _service = services;
 
             //Navigation 서비스 등록
-            _navigationService = new NavigationService(_service);
+            _navigationService = new NavigationService();
             _service.AddSingleton<INavigationService>(_navigationService);
 
             //Dialog 서비스 등록
-            _dialogService = new DialogService(_service);
+            _dialogService = new DialogService();
             _service.AddSingleton<IDialogService>(_dialogService);
         }
 
         #region NavigationService
         public void AddTransientNavigation<TView, TVIewModel>() where TView : Control
-                                                                where TVIewModel : ViewModelBase
+                                                                where TVIewModel : IViewModelBase
         {
             _navigationService.AddTransientNavigation<TView, TVIewModel>();
         }
 
         public void AddSingletonNavigation<TView, TVIewModel>() where TView : Control
-                                                                where TVIewModel : ViewModelBase
+                                                                where TVIewModel : IViewModelBase
         {
             _navigationService.AddSingletonNavigation<TView, TVIewModel>();
         }
 
         public void AddSingletonNavigation<TInterface, TImplementation, TViewModel>() where TInterface : class
                                                                                       where TImplementation : Control, TInterface
-                                                                                      where TViewModel : ViewModelBase
+                                                                                      where TViewModel : IViewModelBase
         {
             _navigationService.AddSingletonNavigation<TInterface, TImplementation, TViewModel>();
         }
 
         public void AddTransientNavigation<TInterface, TImplementation, TViewModel>() where TInterface : class
                                                                                         where TImplementation : Control, TInterface
-                                                                                        where TViewModel : ViewModelBase
+                                                                                        where TViewModel : IViewModelBase
         {
             _navigationService.AddTransientNavigation<TInterface, TImplementation, TViewModel>();
         }
@@ -56,13 +57,13 @@ namespace netflix.Core
 
         #region DialogService
         public void AddTransientDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware
+                                                            where TViewModel : IViewModelBase, IDialogAware
         {
             _dialogService.AddTransientDialog<TView, TViewModel>();
         }
 
         public void AddSingletonDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware
+                                                            where TViewModel : IViewModelBase, IDialogAware
         {
             _dialogService.AddSingletonDialog<TView, TViewModel>();
         }

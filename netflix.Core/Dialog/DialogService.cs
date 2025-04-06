@@ -1,24 +1,22 @@
-﻿using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using netflix.Core.Parameter;
+using netflix.Core;
+using netflix.Parameter;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System;
 
-namespace netflix.Core.Dialog
+namespace netflix.Dialog
 {
     internal class DialogService : IDialogService, IDialogRegister
     {
         private readonly Dictionary<string, Tuple<Type, Type>> _viewViewModelDictionary = new();
 
-        private readonly IServiceCollection _serviceCollection;
-
-
-        public DialogService(IServiceCollection serviceDescriptors)
+        public DialogService()
         {
-            _serviceCollection = serviceDescriptors;
+            // 생성자 간소화 - 의존성은 DI 확장 메서드에서 처리
         }
 
         public void ShowDialog(string viewName, Parameters? parameters = null, Action<IDialogResult>? callback = null)
@@ -27,7 +25,6 @@ namespace netflix.Core.Dialog
             IsViewNameValid(viewName);
 
             DialogBase dialogBase = new();
-
 
             SetDialogViewAndViewModel(viewName, parameters, dialogBase, callback);
 
@@ -84,23 +81,15 @@ namespace netflix.Core.Dialog
         }
 
         public void AddTransientDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware
+                                                            where TViewModel : IViewModelBase, IDialogAware
         {
-            _serviceCollection.AddTransient<TView>();
-
-            _serviceCollection.AddTransient<TViewModel>();
-
             _viewViewModelDictionary[typeof(TView).Name] =
                 new Tuple<Type, Type>(typeof(TView), typeof(TViewModel));
         }
 
         public void AddSingletonDialog<TView, TViewModel>() where TView : Control
-                                                            where TViewModel : ViewModelBase, IDialogAware
+                                                            where TViewModel : IViewModelBase, IDialogAware
         {
-            _serviceCollection.AddSingleton<TView>();
-
-            _serviceCollection.AddSingleton<TViewModel>();
-
             _viewViewModelDictionary[typeof(TView).Name] =
                 new Tuple<Type, Type>(typeof(TView), typeof(TViewModel));
         }

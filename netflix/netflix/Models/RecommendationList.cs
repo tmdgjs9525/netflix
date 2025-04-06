@@ -14,6 +14,6 @@ namespace netflix.Models
         public partial string RecommendationListName { get; set; }
 
         [ObservableProperty]
-        public partial ObservableCollection<VideoInfo> RecommendList { get; set; } = new ObservableCollection<VideoInfo>();
+        public partial ObservableCollection<MideaInfo> RecommendList { get; set; } = new ObservableCollection<MideaInfo>();
     }
 }

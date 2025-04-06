@@ -1,21 +1,16 @@
-﻿using CommunityToolkit.Mvvm.DependencyInjection;
+﻿using Another.Wpf.Container.Extensions;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using netflix.Core;
-using netflix.Core.Navigate;
+using netflix.Extensions;
+using netflix.Navigate;
 using netflix.Regions;
 using netflix.ViewModels;
 using netflix.Views;
 using netflix.Views.BookMark;
+using netflix.Views.Dialogs;
 using netflix.Views.Main;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Windows;
-using System.Windows.Browser;
-using System.Windows.Controls;
-using System.Windows.Interop;
 
 namespace netflix
 {
@@ -62,15 +57,18 @@ namespace netflix
     {
         public static IServiceProvider ConfigureService(this IServiceCollection services)
         {
+            services.AddNavigationService();
+            services.AddDialogService();
+
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
 
-            Container container = new Container(services);
+            services.AddSingletonNavigation<LoginView, LoginViewModel>();
+            services.AddSingletonNavigation<MainView, MainViewModel>();
+            services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
+            services.AddSingletonNavigation<BookMarkedView, BookMarkedViewModel>();
 
-            container.AddSingletonNavigation<LoginView, LoginViewModel>();
-            container.AddSingletonNavigation<MainView, MainViewModel>();
-            container.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-            container.AddSingletonNavigation<BookMarkedView, BookMarkedViewModel>();
+            services.AddSingletonDialog<MediaInfoDialogView,MediaInfoDialogViewModel>();
 
             return services.BuildServiceProvider();
         }

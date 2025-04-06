@@ -1,13 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
-using netflix.Core.Navigate;
+using netflix.Navigate;
 using netflix.Regions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace netflix.ViewModels
 {

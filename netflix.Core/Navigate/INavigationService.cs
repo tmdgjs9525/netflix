@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Windows.Controls;
-using netflix.Core.Parameter;
+﻿using System.Windows.Controls;
+using netflix.Core;
+using netflix.Parameter;
 
-namespace netflix.Core.Navigate
+namespace netflix.Navigate
 {
     public interface INavigationService
     {
@@ -12,22 +11,20 @@ namespace netflix.Core.Navigate
 
     public interface INavigationRegister
     {
-        Dictionary<string, Tuple<Type, Type>> GetViewDictionary();
-
         public void AddTransientNavigation<TView, TViewModel>() where TView : Control
-                                                                where TViewModel : ViewModelBase;
+                                                                where TViewModel : IViewModelBase;
         public void AddSingletonNavigation<TView, TViewModel>() where TView : Control
-                                                                where TViewModel : ViewModelBase;
+                                                                where TViewModel : IViewModelBase;
 
         public void AddSingletonNavigation<TInterface, TImplementation, TViewModel>()
                     where TInterface : class
                     where TImplementation : Control, TInterface
-                    where TViewModel : ViewModelBase;
+                    where TViewModel : IViewModelBase;
 
         public void AddTransientNavigation<TInterface, TImplementation, TViewModel>()
                    where TInterface : class
                    where TImplementation : Control, TInterface
-                   where TViewModel : ViewModelBase;
+                   where TViewModel : IViewModelBase;
     }
 
     public interface IRegionRegister

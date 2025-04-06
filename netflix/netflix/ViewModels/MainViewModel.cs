@@ -1,17 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
-using netflix.Core.Navigate;
-using netflix.Models;
+using netflix.Navigate;
 using netflix.Regions;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.Xml;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace netflix.ViewModels
 {

@@ -1,6 +1,6 @@
-﻿using netflix.Core.Parameter;
+﻿using netflix.Parameter;
 
-namespace netflix.Core.Dialog
+namespace netflix.Dialog
 {
     public class DialogResult : IDialogResult
     {

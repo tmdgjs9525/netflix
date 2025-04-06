@@ -2,7 +2,7 @@
 
 namespace netflix.Core
 {
-    public class ViewModelBase : ObservableObject
+    public interface IViewModelBase
     {
 
     }

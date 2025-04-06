@@ -44,6 +44,9 @@
     <Page Include="Views\BookMark\BookMarkedView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,12 +78,15 @@
     <Compile Include="Themes\Units\IconButton.cs" />
     <Compile Include="Themes\Units\PlaceHolderTextBox.cs" />
     <Compile Include="Themes\Units\VideoPreview.cs" />
+    <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewModels\BookMarkedViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
     <Compile Include="Views\BookMark\BookmarkedView.xaml.cs" />
+    <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
     <Compile Include="Views\LoginView.xaml.cs" />
     <Compile Include="Views\Main\FrontPageVideo.xaml.cs" />
     <Compile Include="Views\Main\MainContentView.xaml.cs" />

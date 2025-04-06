@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using netflix.Core.Navigate;
+using netflix.Navigate;
 using CommunityToolkit.Mvvm.DependencyInjection;
 
-namespace netflix.Core.Region
+namespace netflix.Region
 {
     /// <summary>
     /// ContentControl 컨트롤에 붙이는 어태치 프로퍼티

@@ -2,7 +2,7 @@
     x:Class="netflix.Views.Main.MainView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:netflix.Views.Main" xmlns:RegionManager="clr-namespace:netflix.Core.Region;assembly=netflix_opensilver.Core"
+    xmlns:local="clr-namespace:netflix.Views.Main" xmlns:RegionManager="clr-namespace:netflix.Region;assembly=netflix_opensilver.Core"
     xmlns:units="clr-namespace:netflix.Themes.Units">
 
     <ScrollViewer Background="{StaticResource MainBackgroundBrush}" VerticalScrollBarVisibility="Visible">

@@ -12,17 +12,19 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-    <Compile Include="Container.cs" />
-    <Compile Include="ViewModelBase.cs" />
-    <Compile Include="Dialog\DialogBase.xaml.cs" />
-    <Compile Include="Dialog\DialogResult.cs" />
-    <Compile Include="Dialog\DialogService.cs" />
-    <Compile Include="Dialog\IDialogService.cs" />
-    <Compile Include="Navigate\INavigationService.cs" />
-    <Compile Include="Navigate\NavigationService.cs" />
-    <Compile Include="Parameter\Parameters.cs" />
-    <Compile Include="Region\RegionManager.cs" />
-  </ItemGroup>
+	  <Compile Include="Container.cs" />
+	  <Compile Include="Dialog\DialogBase.xaml.cs" />
+	  <Compile Include="Dialog\DialogResult.cs" />
+	  <Compile Include="Dialog\DialogService.cs" />
+	  <Compile Include="Dialog\IDialogService.cs" />
+	  <Compile Include="Extensions\DialogServiceExtension.cs" />
+	  <Compile Include="Extensions\NavigationServiceExtension.cs" />
+	  <Compile Include="Navigate\INavigationService.cs" />
+	  <Compile Include="Navigate\NavigationService.cs" />
+	  <Compile Include="Parameter\Parameters.cs" />
+	  <Compile Include="Region\RegionManager.cs" />
+	  <Compile Include="ViewModelBase.cs" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />

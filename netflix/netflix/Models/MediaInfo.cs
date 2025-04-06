@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace netflix.Models
 {
-    public partial class VideoInfo : ObservableObject
+    public partial class MideaInfo : ObservableObject
     {
         public int Id { get; set; }
 
@@ -46,6 +46,6 @@ namespace netflix.Models
         public partial double Rating { get; set; } // 평점
 
         [ObservableProperty]
-        public partial bool HasWatchedVideo { get; set; }
+        public partial bool WatchedVideo { get; set; }
     }
 }

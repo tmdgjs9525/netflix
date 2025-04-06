@@ -1,12 +1,12 @@
 ﻿using System.Windows.Controls;
-using netflix.Core.Parameter;
+using netflix.Core;
+using netflix.Parameter;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System;
-using System.Windows;
 
-namespace netflix.Core.Navigate
+namespace netflix.Navigate
 {
 
     public class NavigationService : INavigationService, INavigationRegister, IRegionRegister
@@ -18,19 +18,11 @@ namespace netflix.Core.Navigate
         private readonly Dictionary<string, ContentControl> _regionDictionary = new();
 
         //di 등록용
-        private readonly IServiceCollection _serviceCollection;
+        //private readonly IServiceCollection _serviceCollection;
 
-        public NavigationService(IServiceCollection serviceCollection)
+        public NavigationService()
         {
-            _serviceCollection = serviceCollection;
 
-            _serviceCollection.AddSingleton<INavigationRegister>(this);
-            _serviceCollection.AddSingleton<IRegionRegister>(this);
-        }
-
-        public Dictionary<string, Tuple<Type,Type>> GetViewDictionary()
-        {
-            return _viewDictionary;
         }
 
         public void RegisterRegion(string regionName, ContentControl control)
@@ -73,26 +65,25 @@ namespace netflix.Core.Navigate
             //Region Navigate
             _regionDictionary[regionName].Content = control;
 
-            Application.Current.Host.NavigationState = viewName;
             // TODO : 로깅
         }
 
 
         public void AddTransientNavigation<TView, TViewModel>() where TView : Control
-                                                                where TViewModel : ViewModelBase
+                                                                where TViewModel : IViewModelBase
         {
-            _serviceCollection.AddTransient<TView>();
-            _serviceCollection.AddTransient<TViewModel>();
+            //_serviceCollection.AddTransient<TView>();
+            //_serviceCollection.AddTransient<TViewModel>();
 
             _viewDictionary[typeof(TView).Name] =
                 new Tuple<Type, Type>(typeof(TView), typeof(TViewModel));
         }
 
         public void AddSingletonNavigation<TView, TViewModel>() where TView : Control
-                                                                where TViewModel : ViewModelBase
+                                                                where TViewModel : IViewModelBase
         {
-            _serviceCollection.AddSingleton<TView>();
-            _serviceCollection.AddTransient<TViewModel>();
+            //_serviceCollection.AddSingleton<TView>();
+            //_serviceCollection.AddTransient<TViewModel>();
 
             _viewDictionary[typeof(TView).Name] =
                 new Tuple<Type, Type>(typeof(TView), typeof(TViewModel));
@@ -100,11 +91,11 @@ namespace netflix.Core.Navigate
 
         public void AddSingletonNavigation<TInterface, TImplementationView, TViewModel>() where TInterface : class               // TInterface는 참조 형식이어야 함
                                                                                          where TImplementationView : Control, TInterface // TImplementation은 Control을 상속하고 TInterface를 구현해야 함
-                                                                                         where TViewModel : ViewModelBase
+                                                                                         where TViewModel : IViewModelBase
         {
             // TInterface를 TImplementation으로 싱글턴으로 등록
-            _serviceCollection.AddSingleton<TInterface, TImplementationView>();
-            _serviceCollection.AddSingleton(typeof(TViewModel));
+            //_serviceCollection.AddSingleton<TInterface, TImplementationView>();
+            //_serviceCollection.AddSingleton(typeof(TViewModel));
 
             // TImplementation의 타입을 _viewDictionary에 추가
 
@@ -116,11 +107,11 @@ namespace netflix.Core.Navigate
 
         public void AddTransientNavigation<TInterface, TImplementationView, TViewModel>() where TInterface : class               // TInterface는 참조 형식이어야 함
                                                                                           where TImplementationView : Control, TInterface // TImplementation은 Control을 상속하고 TInterface를 구현해야 함
-                                                                                          where TViewModel : ViewModelBase
+                                                                                          where TViewModel : IViewModelBase
         {
             // TInterface를 TImplementation으로 싱글턴으로 등록
-            _serviceCollection.AddTransient<TInterface, TImplementationView>();
-            _serviceCollection.AddTransient(typeof(TViewModel));
+            //_serviceCollection.AddTransient<TInterface, TImplementationView>();
+            //_serviceCollection.AddTransient(typeof(TViewModel));
 
             // TImplementation의 타입을 _viewDictionary에 추가
             string viewName = typeof(TInterface).Name.Substring(1);
