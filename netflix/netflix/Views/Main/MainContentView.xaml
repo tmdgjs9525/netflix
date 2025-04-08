@@ -7,11 +7,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="700"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="700" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <local:FrontPageVideo Grid.Row="0"/>
+
+        <local:FrontPageVideo Grid.Row="0" />
 
         <StackPanel Grid.Row="2" Margin="50,0,0,0">
             <TextBlock
@@ -29,7 +29,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <units:VideoPreview />
+                            <units:VideoPreview BodyCommand="{Binding DataContext.ShowMediaInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" BodyCommandParameter="{Binding Id}" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

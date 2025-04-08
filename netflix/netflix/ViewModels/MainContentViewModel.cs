@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Models;
 using System;
@@ -37,6 +38,13 @@ namespace netflix.ViewModels
                 RecommendationListName = "User를 위한 콘텐츠",
                 RecommendList = GetVideoInfos()
             };
+        }
+
+
+        [RelayCommand]
+        private void ShowMediaInfo(int id)
+        {
+
         }
 
         private static ObservableCollection<MideaInfo> GetVideoInfos()
