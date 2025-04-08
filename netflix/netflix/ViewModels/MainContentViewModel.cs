@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
+using netflix.Dialog;
 using netflix.Models;
+using netflix.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +16,8 @@ namespace netflix.ViewModels
 {
     public partial class MainContentViewModel : ViewModelBase
     {
+        private readonly IDialogService _dialogService;
+
         [ObservableProperty]
         public partial MideaInfo RecommendedItem { get; set; }
 
@@ -24,8 +28,10 @@ namespace netflix.ViewModels
         [ObservableProperty]
         public partial RecommendationList Test { get; set; }
 
-        public MainContentViewModel()
+        public MainContentViewModel(IDialogService dialogService)
         {
+            _dialogService = dialogService;
+
             RecommendedItem = new MideaInfo
             {
                 PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABTtqEr23wkU_fY69qASaHlwsopBiJnEWX0kZJs1SPUljgU7dXT_wj_RUm9gTSbwhXB4wNcNm7ZYteEIxssmgXWQjIZC8qOvlAXXT.webp?r=6e4",
@@ -44,7 +50,7 @@ namespace netflix.ViewModels
         [RelayCommand]
         private void ShowMediaInfo(int id)
         {
-
+            _dialogService.ShowDialog(DialogNames.MediaInfoDialogView);
         }
 
         private static ObservableCollection<MideaInfo> GetVideoInfos()

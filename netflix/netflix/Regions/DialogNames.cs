@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace netflix.Regions
 {
-    class DialogNames
+    public static class DialogNames
     {
+        public const string MediaInfoDialogView = nameof(MediaInfoDialogView);
     }
 }

@@ -1,4 +1,5 @@
-﻿using netflix.Dialog;
+﻿using CommunityToolkit.Mvvm.Input;
+using netflix.Dialog;
 using netflix.Parameter;
 using System;
 using System.Collections.Generic;
@@ -14,19 +15,30 @@ namespace netflix.ViewModels
 
         public event Action<IDialogResult?>? RequestClose;
 
+        public MediaInfoDialogViewModel()
+        {
+            
+        }
+
+        [RelayCommand]
+        private void Close()
+        {
+            RequestClose?.Invoke(null);
+        }
+
         public bool CanCloseDialog()
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void OnDialogClosed()
         {
-            throw new NotImplementedException();
+           
         }
 
         public void OnDialogOpened(Parameters parameters)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:netflix.Dialog"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="Transparent"
+    BorderBrush="Transparent"
     Loaded="Window_Loaded"
     Opacity="0"
     mc:Ignorable="d">
@@ -13,11 +14,6 @@
         <ContentControl
             x:Name="dialogContent"
             Grid.Row="1"
-            Content="{Binding View}"
-            RenderTransformOrigin="1,0">
-            <ContentControl.RenderTransform>
-                <ScaleTransform ScaleX="0.2" ScaleY="0.2" />
-            </ContentControl.RenderTransform>
-        </ContentControl>
+            Content="{Binding View}" />
     </Grid>
 </ChildWindow>
