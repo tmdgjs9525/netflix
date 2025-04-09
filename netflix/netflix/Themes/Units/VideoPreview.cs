@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using netflix.Models;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -21,13 +22,13 @@ namespace netflix.Themes.Units
         public static readonly DependencyProperty BodyCommandParameterProperty =
             DependencyProperty.Register(
                 "BodyCommandParameter",
-                typeof(int),
+                typeof(MediaInfo),
                 typeof(VideoPreview),
-                new PropertyMetadata(-1));
+                new PropertyMetadata(null));
 
-        public int BodyCommandParameter
+        public MediaInfo BodyCommandParameter
         {
-            get { return (int)GetValue(BodyCommandParameterProperty); }
+            get { return (MediaInfo)GetValue(BodyCommandParameterProperty); }
             set { SetValue(BodyCommandParameterProperty, value); }
         }
 

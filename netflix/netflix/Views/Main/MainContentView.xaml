@@ -29,7 +29,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <units:VideoPreview BodyCommand="{Binding DataContext.ShowMediaInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" BodyCommandParameter="{Binding Id}" />
+                            <units:VideoPreview BodyCommand="{Binding DataContext.ShowMediaInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" BodyCommandParameter="{Binding .}" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace netflix.Models
 {
-    public partial class MideaInfo : ObservableObject
+    public partial class MediaInfo : ObservableObject
     {
         public int Id { get; set; }
 

@@ -1,6 +1,9 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using netflix.Dialog;
+using netflix.Models;
 using netflix.Parameter;
+using netflix.ParameterNames;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +17,9 @@ namespace netflix.ViewModels
         public string Title { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public event Action<IDialogResult?>? RequestClose;
+
+        [ObservableProperty]
+        public partial MediaInfo MediaInfo { get; set; }
 
         public MediaInfoDialogViewModel()
         {
@@ -38,7 +44,10 @@ namespace netflix.ViewModels
 
         public void OnDialogOpened(Parameters parameters)
         {
-            
+            if (parameters.ContainsKey(ParameterNames.ParameterNames.MedaiInfo))
+            {
+                MediaInfo = parameters.GetValue<MediaInfo>(ParameterNames.ParameterNames.MedaiInfo);
+            }
         }
     }
 }
