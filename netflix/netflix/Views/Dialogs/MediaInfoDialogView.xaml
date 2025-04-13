@@ -6,6 +6,11 @@
     xmlns:units="clr-namespace:netflix.Themes.Units"
     Width="900"
     Height="900">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </UserControl.Resources>
     <ScrollViewer>
         <Grid x:Name="LayoutRoot" Background="Black">
             <Grid.RowDefinitions>
@@ -23,7 +28,7 @@
                 Command="{Binding CloseCommand}"
                 Content="X" />
 
-            <Grid Grid.RowSpan="2" Margin="50,0,50,0">
+            <Grid Margin="50,0,50,0">
                 <StackPanel
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
@@ -52,9 +57,36 @@
                         Icon="{StaticResource PlusIcon}"
                         IconSize="24"
                         UseText="False" />
+                    <units:IconButton
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Top"
+                        Background="#232323"
+                        BorderBrush="#919191"
+                        BorderThickness="2"
+                        CornerRadius="100"
+                        DockPanel.Dock="Left"
+                        Fill="White"
+                        FontSize="24"
+                        Foreground="Black"
+                        Icon="{StaticResource ThumbUpIcon}"
+                        IconSize="24"
+                        UseText="False" />
                 </StackPanel>
-
             </Grid>
+
+            <StackPanel Grid.Row="1" Margin="50,30,50,0">
+                <Grid x:Name="DetailInfo">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="2025(출시년도) 에피소드 9개" />
+                        <TextBlock Margin="0,10,0,0" Text="용사들과 세상을 구한 엘프 프리렌이 마법을 수집하기 위해 혼자 여행을 떠난다. 이로부터 50년 후, 그녀는 많이 늙어버린 옛 동료들과 다시 만난다." TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
 
         </Grid>
     </ScrollViewer>
