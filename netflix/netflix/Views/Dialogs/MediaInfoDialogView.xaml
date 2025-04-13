@@ -24,18 +24,36 @@
                 Content="X" />
 
             <Grid Grid.RowSpan="2" Margin="50,0,50,0">
-                <units:IconButton
-                    Width="120"
-                    Height="50" Margin="0,0,0,50"
+                <StackPanel
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Background="White"
-                    Content="재생"
-                    Fill="Black"
-                    FontSize="24"
-                    Foreground="Black"
-                    Icon="{StaticResource PlayIcon}"
-                    IconSize="24" />
+                    Orientation="Horizontal">
+                    <units:IconButton
+                        Width="120"
+                        Height="50"
+                        Margin="0,0,0,50"
+                        Background="White"
+                        Content="재생"
+                        Fill="Black"
+                        FontSize="24"
+                        Foreground="Black"
+                        Icon="{StaticResource PlayIcon}"
+                        IconSize="24" />
+                    <units:IconButton
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Top"
+                        Background="#232323"
+                        BorderBrush="#919191"
+                        BorderThickness="2"
+                        CornerRadius="100"
+                        Fill="White"
+                        FontSize="24"
+                        Foreground="Black"
+                        Icon="{StaticResource PlusIcon}"
+                        IconSize="24"
+                        UseText="False" />
+                </StackPanel>
+
             </Grid>
 
         </Grid>
