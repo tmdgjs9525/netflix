@@ -19,14 +19,21 @@
             </Grid.RowDefinitions>
 
             <Image Source="{Binding MediaInfo.PosterUrl}" Stretch="UniformToFill" />
-            <Button
+            <units:GradientHoverButton
                 Width="50"
                 Height="50"
                 Margin="20"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
+                Background="{StaticResource MainBackgroundBrush}"
                 Command="{Binding CloseCommand}"
-                Content="X" />
+                Content="X"
+                CornerRadius="100"
+                Cursor="Hand"
+                FontSize="24"
+                Foreground="White"
+                HoverBackground="{StaticResource MainHoverBackground}" />
+
 
             <Grid Margin="50,0,50,0">
                 <StackPanel
@@ -83,7 +90,10 @@
 
                     <StackPanel>
                         <TextBlock Text="2025(출시년도) 에피소드 9개" />
-                        <TextBlock Margin="0,10,0,0" Text="용사들과 세상을 구한 엘프 프리렌이 마법을 수집하기 위해 혼자 여행을 떠난다. 이로부터 50년 후, 그녀는 많이 늙어버린 옛 동료들과 다시 만난다." TextWrapping="Wrap" />
+                        <TextBlock
+                            Margin="0,10,0,0"
+                            Text="용사들과 세상을 구한 엘프 프리렌이 마법을 수집하기 위해 혼자 여행을 떠난다. 이로부터 50년 후, 그녀는 많이 늙어버린 옛 동료들과 다시 만난다."
+                            TextWrapping="Wrap" />
                     </StackPanel>
                 </Grid>
             </StackPanel>

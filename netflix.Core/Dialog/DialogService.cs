@@ -14,7 +14,7 @@ namespace netflix.Dialog
     {
         private readonly Dictionary<string, Tuple<Type, Type>> _viewViewModelDictionary = new();
 
-        public DialogService()
+        internal DialogService()
         {
             // 생성자 간소화 - 의존성은 DI 확장 메서드에서 처리
         }

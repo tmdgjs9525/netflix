@@ -4,8 +4,12 @@
     xmlns:local="clr-namespace:netflix">
 
     <Color x:Key="MainBackground">#141414</Color>
+    <Color x:Key="MainHoverBackground">#333333</Color>
+
+    
     <Color x:Key="LogoForeGround">#E50914</Color>
     
     <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackground}" />
+    <SolidColorBrush x:Key="MainHoverBackgroundBrush" Color="{StaticResource MainHoverBackground}" />
     <SolidColorBrush x:Key="LogoForeGroundBrush" Color="{StaticResource LogoForeGround}" />
 </ResourceDictionary>

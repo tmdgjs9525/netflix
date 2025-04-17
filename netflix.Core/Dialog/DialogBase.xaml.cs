@@ -22,6 +22,9 @@ namespace netflix.Dialog
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            Button closeButton = (Button)GetTemplateChild("CloseButton");
+
+            closeButton.Visibility = Visibility.Collapsed;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

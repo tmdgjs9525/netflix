@@ -11,9 +11,9 @@
                 <ResourceDictionary Source="Geometries.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/CookieRun Regular.ttf#CookieRun Regular</FontFamily>
+            <FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium</FontFamily>
 
-            <Style TargetType="Page">
+            <Style x:Key="page" TargetType="Page">
                 <Setter Property="FontFamily" Value="{StaticResource MainFont}" />
             </Style>
 

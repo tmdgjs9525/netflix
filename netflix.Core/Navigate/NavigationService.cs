@@ -9,7 +9,7 @@ using System;
 namespace netflix.Navigate
 {
 
-    public class NavigationService : INavigationService, INavigationRegister, IRegionRegister
+    internal class NavigationService : INavigationService, INavigationRegister, IRegionRegister
     {
         //Type1 View / Type2 ViewModel
         private readonly Dictionary<string, Tuple<Type, Type>> _viewDictionary = new();
@@ -20,7 +20,7 @@ namespace netflix.Navigate
         //di 등록용
         //private readonly IServiceCollection _serviceCollection;
 
-        public NavigationService()
+        internal NavigationService()
         {
 
         }
