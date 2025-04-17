@@ -29,8 +29,8 @@
             <StackPanel Margin="68,0,68,0">
                 <TextBlock
                     Margin="0,40,0,28"
-                    FontSize="32"
-                    FontWeight="Bold"
+                    FontSize="32" FontFamily="{StaticResource MainFont}"
+                    FontWeight="Bold" Foreground="White"
                     Text="로그인" />
 
                 <units:PlaceHolderTextBox

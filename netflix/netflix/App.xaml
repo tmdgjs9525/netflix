@@ -8,15 +8,23 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Generic.xaml" />
                 <ResourceDictionary Source="Colors.xaml" />
-                <ResourceDictionary Source="Geometries.xaml"/>
+                <ResourceDictionary Source="Geometries.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/CookieRun Regular.ttf#CookieRun Regular</FontFamily>
+
+            <Style TargetType="Page">
+                <Setter Property="FontFamily" Value="{StaticResource MainFont}" />
+            </Style>
 
             <Style TargetType="TransitioningContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
             </Style>
+
             <Style TargetType="ContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
             </Style>
         </ResourceDictionary>
