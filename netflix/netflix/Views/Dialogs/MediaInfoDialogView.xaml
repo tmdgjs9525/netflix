@@ -96,6 +96,29 @@
                             TextWrapping="Wrap" />
                     </StackPanel>
                 </Grid>
+
+                <ItemsControl Margin="0,50,0,0" ItemsSource="{Binding MediaInfoList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image
+                                    Width="400"
+                                    Height="250"
+                                    Source="{Binding PosterUrl}" />
+                                <StackPanel Margin="30,0,0,0">
+                                    <TextBlock
+                                        FontSize="20"
+                                        Foreground="White"
+                                        Text="a" />
+                                    <TextBlock
+                                        FontSize="16"
+                                        Foreground="White"
+                                        Text="b" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
 
         </Grid>

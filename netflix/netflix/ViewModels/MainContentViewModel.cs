@@ -46,7 +46,8 @@ namespace netflix.ViewModels
         {
             _dialogService.ShowDialog(DialogNames.MediaInfoDialogView, new Parameters()
             {
-                { ParameterNames.ParameterNames.MedaiInfo, item }
+                { ParameterNames.ParameterNames.MediaInfo, item },
+                { ParameterNames.ParameterNames.MediaInfoList, Test }
             });
         }
 

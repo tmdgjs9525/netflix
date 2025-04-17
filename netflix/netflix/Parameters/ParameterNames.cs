@@ -8,6 +8,7 @@ namespace netflix.ParameterNames
 {
     public static class ParameterNames
     {
-        public const string MedaiInfo = nameof(MedaiInfo);
+        public const string MediaInfo = nameof(MediaInfo);
+        public const string MediaInfoList = nameof(MediaInfoList);
     }
 }
