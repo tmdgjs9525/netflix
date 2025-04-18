@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+	<LangVersion>preview</LangVersion>
+	<Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Themes\UI\VideoPreview.cs" />
+    <Compile Include="ViewModels\FrontPageVideo.xaml.cs" />
+    <Compile Include="ViewModels\TopMenu.xaml.cs" />
+    <Compile Include="Views\MainContentView.xaml.cs" />
+    <Compile Include="Views\MainView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\VideoPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\FrontPageVideo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModels\TopMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\netflix.AppInfra\netflix.AppInfra.csproj" />
+    <ProjectReference Include="..\netflix.Core\netflix.Core.csproj" />
+    <ProjectReference Include="..\netflix.Support\netflix.Support.csproj" />
+  </ItemGroup>
+
+</Project>

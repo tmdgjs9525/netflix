@@ -1,9 +1,9 @@
 ﻿<UserControl
-    x:Class="netflix.Views.Main.MainContentView"
+    x:Class="netflix.Main.Views.Main.MainContentView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:netflix.Views.Main"
-    xmlns:units="clr-namespace:netflix.Themes.Units">
+    xmlns:ui="clr-namespace:netflix.Main.Themes.UI">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <units:VideoPreview BodyCommand="{Binding DataContext.ShowMediaInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" BodyCommandParameter="{Binding .}" />
+                            <ui:VideoPreview BodyCommand="{Binding DataContext.ShowMediaInfoCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" BodyCommandParameter="{Binding .}" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

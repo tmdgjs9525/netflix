@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using netflix.Navigate;
 using CommunityToolkit.Mvvm.DependencyInjection;
 
-namespace netflix.Region
+namespace netflix.AppInfra.Region
 {
     /// <summary>
     /// ContentControl 컨트롤에 붙이는 어태치 프로퍼티

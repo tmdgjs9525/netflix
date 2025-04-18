@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace netflix.Models
+namespace netflix.Core.Models
 {
     public partial class MediaInfo : ObservableObject
     {

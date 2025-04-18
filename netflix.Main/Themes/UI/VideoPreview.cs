@@ -1,9 +1,9 @@
-﻿using netflix.Models;
+﻿using netflix.Core.Models;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace netflix.Themes.Units
+namespace netflix.Main.Themes.UI
 {
     internal class VideoPreview : Control
     {

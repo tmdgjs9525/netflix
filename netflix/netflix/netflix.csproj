@@ -26,28 +26,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Views\VideoPreview.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\BookMark\BookMarkedView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Main\FrontPageVideo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Main\MainContentView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Main\MainView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Main\TopMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -56,11 +38,7 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="Models\Episode.cs" />
-    <Compile Include="Models\MediaInfo.cs" />
-    <Compile Include="Models\RecommendationList.cs" />
     <Compile Include="Parameters\ParameterNames.cs" />
-    <Compile Include="Themes\Units\VideoPreview.cs" />
     <Compile Include="ViewModels\BookMarkedViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -68,10 +46,6 @@
     <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
     <Compile Include="Views\BookMark\BookmarkedView.xaml.cs" />
     <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
-    <Compile Include="Views\Main\FrontPageVideo.xaml.cs" />
-    <Compile Include="Views\Main\MainContentView.xaml.cs" />
-    <Compile Include="Views\Main\MainView.xaml.cs" />
-    <Compile Include="Views\Main\TopMenu.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -99,7 +73,12 @@
     <ProjectReference Include="..\..\netflix.AppInfra\netflix.AppInfra.csproj" />
     <ProjectReference Include="..\..\netflix.Core\netflix.Core.csproj" />
     <ProjectReference Include="..\..\netflix.Login\netflix.Login.csproj" />
+    <ProjectReference Include="..\..\netflix.Main\netflix.Main.csproj" />
     <ProjectReference Include="..\..\netflix.Support\netflix.Support.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Main\" />
   </ItemGroup>
 
 </Project>

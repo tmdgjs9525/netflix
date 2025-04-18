@@ -5,12 +5,11 @@ using netflix.Core.Regions;
 using netflix.Extensions;
 using netflix.Login.ViewModels;
 using netflix.Login.Views;
+using netflix.Main.Views.Main;
 using netflix.Navigate;
 using netflix.ViewModels;
-using netflix.Views;
 using netflix.Views.BookMark;
 using netflix.Views.Dialogs;
-using netflix.Views.Main;
 using System;
 using System.Windows;
 

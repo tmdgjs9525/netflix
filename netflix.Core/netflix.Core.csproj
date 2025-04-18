@@ -4,9 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Models\Episode.cs" />
+    <Compile Include="Models\MediaInfo.cs" />
+    <Compile Include="Models\RecommendationList.cs" />
     <Compile Include="Regions\DialogNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Regions\ViewNames.cs" />
