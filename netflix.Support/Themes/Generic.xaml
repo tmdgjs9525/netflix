@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/netflix.Support;component/Themes/Views/IconButton.xaml" />
+
+        <ResourceDictionary Source="/netflix.Support;component/Themes/Views/GradientHoverButton.xaml" />
+        <ResourceDictionary Source="/netflix.Support;component/Themes/Views/PlaceHolderTextBox.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

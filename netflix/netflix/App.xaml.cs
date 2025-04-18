@@ -1,9 +1,11 @@
 ﻿using Another.Wpf.Container.Extensions;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using netflix.Core.Regions;
 using netflix.Extensions;
+using netflix.Login.ViewModels;
+using netflix.Login.Views;
 using netflix.Navigate;
-using netflix.Regions;
 using netflix.ViewModels;
 using netflix.Views;
 using netflix.Views.BookMark;
@@ -22,7 +24,7 @@ namespace netflix
         {
             this.InitializeComponent();
 
-            IServiceProvider provider = serviceInitialize();
+            IServiceProvider provider = ServiceInitialize();
 
             _navigationService = provider.GetRequiredService<INavigationService>();
 
@@ -40,7 +42,7 @@ namespace netflix
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
-        private IServiceProvider serviceInitialize()
+        private IServiceProvider ServiceInitialize()
         {
             ServiceCollection services = new ServiceCollection();
 

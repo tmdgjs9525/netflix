@@ -6,7 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/Generic.xaml" />
+                <ResourceDictionary Source="/netflix;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="/netflix.Support;component/Themes/Generic.xaml" />
                 <ResourceDictionary Source="Colors.xaml" />
                 <ResourceDictionary Source="Geometries.xaml" />
             </ResourceDictionary.MergedDictionaries>

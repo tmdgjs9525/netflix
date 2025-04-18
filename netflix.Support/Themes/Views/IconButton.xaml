@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnvtrs="clr-namespace:netflix.Support.Converter"
+    xmlns:ui="clr-namespace:netflix.Support.Themes.UI">
+
+    <cnvtrs:BoolToVisibleConverter x:Key="BoolToVisibleConverter" />
+    <Style TargetType="ui:IconButton">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ui:IconButton">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <StackPanel
+                            Margin="10,10,10,10"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Viewbox
+                                Width="{TemplateBinding IconSize}"
+                                Height="{TemplateBinding IconSize}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                <Path
+                                    Data="{TemplateBinding Icon}"
+                                    Fill="{TemplateBinding Fill}"
+                                    Stretch="Fill" />
+                            </Viewbox>
+                            <ContentPresenter
+                                x:Name="content"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Visibility="{Binding UseText, RelativeSource={RelativeSource AncestorType=ui:IconButton}, Converter={StaticResource BoolToVisibleConverter}}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

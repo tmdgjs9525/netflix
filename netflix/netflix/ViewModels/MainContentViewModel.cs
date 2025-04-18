@@ -1,9 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using netflix.Core;
+using netflix.Core.Regions;
 using netflix.Dialog;
 using netflix.Models;
 using netflix.Parameter;
-using netflix.Regions;
 using System.Collections.ObjectModel;
 
 namespace netflix.ViewModels

@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
+using netflix.Core.Regions;
 using netflix.Navigate;
-using netflix.Regions;
 
 namespace netflix.ViewModels
 {

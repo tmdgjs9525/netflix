@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Include="Container.cs" />
+	  <Compile Include="Dialog\DialogBase.xaml.cs" />
+	  <Compile Include="Dialog\DialogResult.cs" />
+	  <Compile Include="Dialog\DialogService.cs" />
+	  <Compile Include="Dialog\IDialogService.cs" />
+	  <Compile Include="Extensions\DialogServiceExtension.cs" />
+	  <Compile Include="Extensions\NavigationServiceExtension.cs" />
+	  <Compile Include="Navigate\INavigationService.cs" />
+	  <Compile Include="Navigate\NavigationService.cs" />
+	  <Compile Include="Parameter\Parameters.cs" />
+	  <Compile Include="Region\RegionManager.cs" />
+	</ItemGroup>
+
+  <ItemGroup>
+
+    <PackageReference Include="OpenSilver" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Dialog\DialogBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="netflix.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -29,15 +29,6 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Views\GradientHoverButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Views\IconButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Views\PlaceHolderTextBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Views\VideoPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -45,9 +36,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Main\FrontPageVideo.xaml">
@@ -72,23 +60,14 @@
     <Compile Include="Models\MediaInfo.cs" />
     <Compile Include="Models\RecommendationList.cs" />
     <Compile Include="Parameters\ParameterNames.cs" />
-    <Compile Include="Regions\DialogNames.cs" />
-    <Compile Include="Regions\RegionNames.cs" />
-    <Compile Include="Regions\ViewNames.cs" />
-    <Compile Include="Themes\Units\GradientHoverButton.cs" />
-    <Compile Include="Themes\Units\IconButton.cs" />
-    <Compile Include="Themes\Units\PlaceHolderTextBox.cs" />
     <Compile Include="Themes\Units\VideoPreview.cs" />
-    <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewModels\BookMarkedViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
     <Compile Include="Views\BookMark\BookmarkedView.xaml.cs" />
     <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
-    <Compile Include="Views\LoginView.xaml.cs" />
     <Compile Include="Views\Main\FrontPageVideo.xaml.cs" />
     <Compile Include="Views\Main\MainContentView.xaml.cs" />
     <Compile Include="Views\Main\MainView.xaml.cs" />
@@ -117,7 +96,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\netflix.Core\netflix_opensilver.Core.csproj" />
+    <ProjectReference Include="..\..\netflix.AppInfra\netflix.AppInfra.csproj" />
+    <ProjectReference Include="..\..\netflix.Core\netflix.Core.csproj" />
+    <ProjectReference Include="..\..\netflix.Login\netflix.Login.csproj" />
+    <ProjectReference Include="..\..\netflix.Support\netflix.Support.csproj" />
   </ItemGroup>
 
 </Project>

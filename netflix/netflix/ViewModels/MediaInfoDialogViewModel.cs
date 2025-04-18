@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using netflix.Core;
 using netflix.Dialog;
 using netflix.Models;
 using netflix.Parameter;

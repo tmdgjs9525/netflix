@@ -1,0 +1,87 @@
+﻿<UserControl
+    x:Class="netflix.Login.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix.Login.Views"
+    xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBoxBackgroundBrush">#BB000000</SolidColorBrush>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://assets.nflxext.com/ffe/siteui/vlv3/e3e9c31f-aa15-4a8f-8059-04f01e6b8629/web/KR-ko-20250113-TRIFECTA-perspective_c39cebdf-3acb-4845-bd67-10e6e11f5630_small.jpg" />
+        </Grid.Background>
+
+        <Border
+            Grid.Column="1"
+            Width="450"
+            Height="718"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="#AA000000"
+            CornerRadius="3">
+            <StackPanel Margin="68,0,68,0">
+                <TextBlock
+                    Margin="0,40,0,28"
+                    FontFamily="{StaticResource MainFont}"
+                    FontSize="32"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Text="로그인" />
+
+                <support:PlaceHolderTextBox
+                    Width="314"
+                    Height="56"
+                    Background="{StaticResource TextBoxBackgroundBrush}"
+                    BorderBrush="White"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    Foreground="White"
+                    PlaceholderText="이메일 주소 또는 휴대폰 번호" />
+
+                <support:PlaceHolderTextBox
+                    Width="314"
+                    Height="56"
+                    Margin="0,20,0,0"
+                    Background="{StaticResource TextBoxBackgroundBrush}"
+                    BorderBrush="White"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    Foreground="White"
+                    PlaceholderText="비밀번호" />
+                <!--  StaticResource에서 TextBoxBackGroundBrush를 직접 입력해줘야함 ;;  -->
+
+                <support:GradientHoverButton
+                    Height="50"
+                    Margin="0,20,0,0"
+                    Background="#EB3324"
+                    Command="{Binding LoginCommand}"
+                    Content="로그인"
+                    Foreground="White"
+                    HoverBackground="#C22A1E" />
+
+                <TextBlock
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Foreground="Gray"
+                    Text="또는" />
+
+                <support:GradientHoverButton
+                    Height="50"
+                    Margin="0,20,0,0"
+                    Background="#CC808080"
+                    Content="로그인 코드 사용하기"
+                    Foreground="White"
+                    HoverBackground="#AA808080" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
