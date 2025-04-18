@@ -41,8 +41,6 @@
     <Compile Include="Parameters\ParameterNames.cs" />
     <Compile Include="ViewModels\BookMarkedViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
-    <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
     <Compile Include="Views\BookMark\BookmarkedView.xaml.cs" />
     <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
@@ -78,7 +76,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Main\" />
+    <UpToDateCheckInput Remove="Views\Main\**" />
   </ItemGroup>
 
 </Project>

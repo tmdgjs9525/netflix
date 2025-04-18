@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace netflix.Main.Views.Main
+namespace netflix.Main.Views
 {
     public partial class MainContentView : UserControl
     {

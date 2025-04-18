@@ -3,9 +3,9 @@ using netflix.Core;
 using netflix.Core.Regions;
 using netflix.Navigate;
 
-namespace netflix.ViewModels
+namespace netflix.Main.ViewModels
 {
-    internal partial class MainViewModel : ViewModelBase
+    public partial class MainViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 

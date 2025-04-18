@@ -2,9 +2,9 @@
 using netflix.Navigate;
 using System;
 
-namespace netflix.ViewModels
+namespace netflix.Main.ViewModels
 {
-    internal class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase
     {
         #region fields
         private readonly INavigationService _navigationService;

@@ -1,8 +1,8 @@
 ﻿<UserControl
-    x:Class="netflix.Main.Views.Main.MainContentView"
+    x:Class="netflix.Main.Views.MainContentView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:netflix.Views.Main"
+    xmlns:local="clr-namespace:netflix.Main.Views" xmlns:controls="clr-namespace:netflix.Main.Controls"
     xmlns:ui="clr-namespace:netflix.Main.Themes.UI">
 
     <Grid>
@@ -11,7 +11,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <local:FrontPageVideo Grid.Row="0" />
+        <controls:FrontPageVideo Grid.Row="0" />
 
         <StackPanel Grid.Row="2" Margin="50,0,0,0">
             <TextBlock

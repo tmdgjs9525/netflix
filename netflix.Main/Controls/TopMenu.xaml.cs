@@ -1,10 +1,10 @@
 ﻿using System.Windows.Controls;
 
-namespace netflix.Main.Views
+namespace netflix.Main.Controls
 {
-    public partial class MainView : UserControl
+    public partial class TopMenu : UserControl
     {
-        public MainView()
+        public TopMenu()
         {
             this.InitializeComponent();
         }

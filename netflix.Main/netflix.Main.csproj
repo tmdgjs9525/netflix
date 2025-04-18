@@ -10,8 +10,10 @@
 
   <ItemGroup>
     <Compile Include="Themes\UI\VideoPreview.cs" />
-    <Compile Include="ViewModels\FrontPageVideo.xaml.cs" />
-    <Compile Include="ViewModels\TopMenu.xaml.cs" />
+    <Compile Include="Controls\FrontPageVideo.xaml.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Controls\TopMenu.xaml.cs" />
     <Compile Include="Views\MainContentView.xaml.cs" />
     <Compile Include="Views\MainView.xaml.cs" />
   </ItemGroup>
@@ -27,10 +29,10 @@
     <Page Include="Themes\Views\VideoPreview.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewModels\FrontPageVideo.xaml">
+    <Page Include="Controls\FrontPageVideo.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewModels\TopMenu.xaml">
+    <Page Include="Controls\TopMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainContentView.xaml">
