@@ -9,7 +9,6 @@ using netflix.Main.ViewModels;
 using netflix.Main.Views;
 using netflix.Navigate;
 using netflix.ViewModels;
-using netflix.Views.BookMark;
 using netflix.Views.Dialogs;
 using System;
 using System.Windows;

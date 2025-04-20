@@ -1,6 +1,6 @@
 ﻿using netflix.Core;
 
-namespace netflix.ViewModels
+namespace netflix.Main.ViewModels
 {
     public partial class BookMarkedViewModel : ViewModelBase
     {

@@ -26,9 +26,6 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BookMark\BookMarkedView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -39,10 +36,8 @@
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
     <Compile Include="MainPage.xaml.cs" />
     <Compile Include="Parameters\ParameterNames.cs" />
-    <Compile Include="ViewModels\BookMarkedViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
-    <Compile Include="Views\BookMark\BookmarkedView.xaml.cs" />
     <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
   </ItemGroup>
 
@@ -77,6 +72,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\Main\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\BookMark\" />
   </ItemGroup>
 
 </Project>

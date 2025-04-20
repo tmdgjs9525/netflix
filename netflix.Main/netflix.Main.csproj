@@ -11,9 +11,13 @@
   <ItemGroup>
     <Compile Include="Themes\UI\VideoPreview.cs" />
     <Compile Include="Controls\FrontPageVideo.xaml.cs" />
+    <Compile Include="ViewModels\BookMarkedViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Controls\TopMenu.xaml.cs" />
+    <Compile Include="Views\BookmarkedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Views\MainContentView.xaml.cs" />
     <Compile Include="Views\MainView.xaml.cs" />
   </ItemGroup>
@@ -33,6 +37,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\TopMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BookMarkedView.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainContentView.xaml">
