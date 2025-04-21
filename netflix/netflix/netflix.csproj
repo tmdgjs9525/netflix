@@ -75,7 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\BookMark\" />
+    <UpToDateCheckInput Remove="Views\BookMark\**" />
   </ItemGroup>
 
 </Project>
