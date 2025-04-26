@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace netflix.Views.Dialogs
+namespace netflix.Main.Views.Dialogs
 {
     public partial class MediaInfoDialogView : UserControl
     {

@@ -2,7 +2,7 @@
 using netflix.Navigate;
 using System;
 
-namespace netflix.Main.ViewModels
+namespace netflix.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
@@ -16,9 +16,6 @@ namespace netflix.Main.ViewModels
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            Console.WriteLine("mv");
-
-            // _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
         #region Commands

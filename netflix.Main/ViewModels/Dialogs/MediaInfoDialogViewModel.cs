@@ -2,12 +2,13 @@
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
+using netflix.Core.ParameterNames;
 using netflix.Dialog;
 using netflix.Parameter;
 using System;
 using System.Collections.ObjectModel;
 
-namespace netflix.ViewModels
+namespace netflix.Main.ViewModels.Dialogs
 {
     public partial class MediaInfoDialogViewModel : ViewModelBase, IDialogAware
     {
@@ -44,14 +45,14 @@ namespace netflix.ViewModels
 
         public void OnDialogOpened(Parameters parameters)
         {
-            if (parameters.ContainsKey(ParameterNames.ParameterNames.MediaInfo))
+            if (parameters.ContainsKey(ParameterNames.MediaInfo))
             {
-                MediaInfo = parameters.GetValue<MediaInfo>(ParameterNames.ParameterNames.MediaInfo);
+                MediaInfo = parameters.GetValue<MediaInfo>(ParameterNames.MediaInfo);
             }
 
-            if (parameters.ContainsKey(ParameterNames.ParameterNames.MediaInfoList))
+            if (parameters.ContainsKey(ParameterNames.MediaInfoList))
             {
-                var list = parameters.GetValue<RecommendationList>(ParameterNames.ParameterNames.MediaInfoList);
+                var list = parameters.GetValue<RecommendationList>(ParameterNames.MediaInfoList);
                 MediaInfoList = list.RecommendList;
             }
         }

@@ -12,6 +12,9 @@
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\MediaInfo.cs" />
     <Compile Include="Models\RecommendationList.cs" />
+    <Compile Include="Parameters\ParameterNames.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Regions\DialogNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Regions\ViewNames.cs" />

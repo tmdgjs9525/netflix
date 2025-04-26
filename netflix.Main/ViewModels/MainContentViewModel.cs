@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
+using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Dialog;
 using netflix.Parameter;
@@ -47,8 +48,8 @@ namespace netflix.ViewModels
         {
             _dialogService.ShowDialog(DialogNames.MediaInfoDialogView, new Parameters()
             {
-                { ParameterNames.ParameterNames.MediaInfo, item },
-                { ParameterNames.ParameterNames.MediaInfoList, Test }
+                { ParameterNames.MediaInfo, item },
+                { ParameterNames.MediaInfoList, Test }
             });
         }
 

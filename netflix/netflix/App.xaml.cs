@@ -6,10 +6,11 @@ using netflix.Extensions;
 using netflix.Login.ViewModels;
 using netflix.Login.Views;
 using netflix.Main.ViewModels;
+using netflix.Main.ViewModels.Dialogs;
 using netflix.Main.Views;
+using netflix.Main.Views.Dialogs;
 using netflix.Navigate;
 using netflix.ViewModels;
-using netflix.Views.Dialogs;
 using System;
 using System.Windows;
 

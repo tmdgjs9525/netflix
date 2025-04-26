@@ -26,19 +26,13 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="Parameters\ParameterNames.cs" />
-    <Compile Include="ViewModels\MainContentViewModel.cs" />
-    <Compile Include="ViewModels\MediaInfoDialogViewModel.cs" />
-    <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +70,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\BookMark\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>

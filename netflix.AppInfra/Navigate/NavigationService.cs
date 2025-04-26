@@ -8,7 +8,6 @@ using System.Windows.Controls;
 
 namespace netflix.Navigate
 {
-
     internal class NavigationService : INavigationService, INavigationRegister, IRegionRegister
     {
         //Type1 View / Type2 ViewModel

@@ -1,8 +1,7 @@
 ﻿<UserControl
-    x:Class="netflix.Views.Dialogs.MediaInfoDialogView"
+    x:Class="netflix.Main.Views.Dialogs.MediaInfoDialogView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:netflix.Views.Dialogs"
     xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support"
     Width="900"
     Height="900">
@@ -92,7 +91,7 @@
                         <TextBlock Text="2025(출시년도) 에피소드 9개" />
                         <TextBlock
                             Margin="0,10,0,0"
-                            Text="용사들과 세상을 구한 엘프 프리렌이 마법을 수집하기 위해 혼자 여행을 떠난다. 이로부터 50년 후, 그녀는 많이 늙어버린 옛 동료들과 다시 만난다."
+                            Text="율제병원 산부인과 1년 차 레지던트들. 병원 생활과 인생살이가 가쁘게 몰아쳐도 어엿한 의사가 되기 위해 한 걸음씩 나아간다."
                             TextWrapping="Wrap" />
                     </StackPanel>
                 </Grid>

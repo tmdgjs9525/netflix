@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace netflix.ParameterNames
+namespace netflix.Core.ParameterNames
 {
     public static class ParameterNames
     {
