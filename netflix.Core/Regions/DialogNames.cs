@@ -2,6 +2,6 @@
 {
     public static class DialogNames
     {
-        public const string MediaInfoDialogView = nameof(MediaInfoDialogView);
+        public const string DetailMediaInfoDialogView = nameof(DetailMediaInfoDialogView);
     }
 }

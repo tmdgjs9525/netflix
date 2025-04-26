@@ -4,6 +4,7 @@ using netflix.AppAbstractions;
 using netflix.Parameter;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace netflix.Navigate
@@ -64,6 +65,7 @@ namespace netflix.Navigate
             //Region Navigate
             _regionDictionary[regionName].Content = control;
 
+            Application.Current.Host.NavigationState = viewName;
             // TODO : 로깅
         }
 

@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="netflix.Main.Views.Dialogs.MediaInfoDialogView"
+    x:Class="netflix.Main.Views.Dialogs.DetailMediaInfoDialogView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support"
@@ -99,22 +99,35 @@
                 <ItemsControl Margin="0,50,0,0" ItemsSource="{Binding MediaInfoList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="400" />
+                                    <!--  이미지 크기 고정  -->
+                                    <ColumnDefinition Width="30" />
+                                    <!--  간격용 빈 칸  -->
+                                    <ColumnDefinition Width="*" />
+                                    <!--  남은 공간 TextBlock 사용  -->
+                                </Grid.ColumnDefinitions>
+
                                 <Image
+                                    Grid.Column="0"
                                     Width="400"
                                     Height="250"
                                     Source="{Binding PosterUrl}" />
-                                <StackPanel Margin="30,0,0,0">
+                                
+                                <StackPanel Grid.Column="2">
                                     <TextBlock
                                         FontSize="20"
+                                        FontWeight="Bold"
                                         Foreground="White"
-                                        Text="a" />
+                                        Text="1화" />
                                     <TextBlock
                                         FontSize="16"
                                         Foreground="White"
-                                        Text="b" />
+                                        Text="경제적으로 궁지에 몰려 마지못해 레지던트 생활로 돌아온 오이영. 시작부터 실수 연발이다. 그러던 중 환자 문제로 첫 고비를 맞이한다."
+                                        TextWrapping="Wrap" />
                                 </StackPanel>
-                            </StackPanel>
+                            </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

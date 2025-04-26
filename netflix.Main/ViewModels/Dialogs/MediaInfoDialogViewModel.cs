@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels.Dialogs
 {
-    public partial class MediaInfoDialogViewModel : ViewModelBase, IDialogAware
+    public partial class DetailMediaInfoDialogViewModel : ViewModelBase, IDialogAware
     {
         public string Title { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -22,7 +22,7 @@ namespace netflix.Main.ViewModels.Dialogs
         [ObservableProperty]
         public partial ObservableCollection<MediaInfo> MediaInfoList { get; set; } = null!;
 
-        public MediaInfoDialogViewModel()
+        public DetailMediaInfoDialogViewModel()
         {
             
         }

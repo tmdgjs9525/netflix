@@ -65,12 +65,12 @@ namespace netflix
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
 
-            services.AddSingletonNavigation<LoginView, LoginViewModel>();
-            services.AddSingletonNavigation<MainView, MainViewModel>();
+            services.AddSingletonNavigation<LoginView      , LoginViewModel>();
+            services.AddSingletonNavigation<MainView       , MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-            services.AddSingletonNavigation<BookMarkedView, BookMarkedViewModel>();
+            services.AddSingletonNavigation<BookMarkedView , BookMarkedViewModel>();
 
-            services.AddSingletonDialog<MediaInfoDialogView,MediaInfoDialogViewModel>();
+            services.AddSingletonDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
 
             return services.BuildServiceProvider();
         }

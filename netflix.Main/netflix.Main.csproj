@@ -21,7 +21,7 @@
     <Compile Include="Views\BookmarkedView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\Dialogs\MediaInfoDialogView.xaml.cs">
+    <Compile Include="Views\Dialogs\DetailMediaInfoDialogView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Views\MainContentView.xaml.cs" />
@@ -49,7 +49,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Dialogs\MediaInfoDialogView.xaml">
+    <Page Include="Views\Dialogs\DetailMediaInfoDialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

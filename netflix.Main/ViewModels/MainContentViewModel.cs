@@ -46,7 +46,7 @@ namespace netflix.ViewModels
         [RelayCommand]
         private void ShowMediaInfo(MediaInfo item)
         {
-            _dialogService.ShowDialog(DialogNames.MediaInfoDialogView, new Parameters()
+            _dialogService.ShowDialog(DialogNames.DetailMediaInfoDialogView, new Parameters()
             {
                 { ParameterNames.MediaInfo, item },
                 { ParameterNames.MediaInfoList, Test }
