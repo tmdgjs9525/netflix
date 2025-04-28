@@ -23,8 +23,10 @@ namespace netflix.Dialog
         {
             base.OnApplyTemplate();
             Button closeButton = (Button)GetTemplateChild("CloseButton");
+            FrameworkElement chrome = (FrameworkElement)GetTemplateChild("Chrome");
 
             closeButton.Visibility = Visibility.Collapsed;
+            chrome.Visibility = Visibility.Collapsed;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

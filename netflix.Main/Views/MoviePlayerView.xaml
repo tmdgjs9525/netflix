@@ -23,7 +23,7 @@
         <StackPanel Grid.Row="2" Margin="15,0,15,0">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" /> 
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Slider />
