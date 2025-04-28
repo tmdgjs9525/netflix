@@ -38,7 +38,7 @@ namespace netflix
             Startup += App_Startup;
         }
 
-        private async void App_Startup(object sender, StartupEventArgs e)
+        private void App_Startup(object sender, StartupEventArgs e)
         {
             //await LoadFonts();
 

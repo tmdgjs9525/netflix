@@ -5,12 +5,34 @@
     xmlns:local="clr-namespace:netflix.Main.Views"
     xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support">
 
-    <Grid>
+    <Grid Background="{StaticResource MainBackgroundBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <support:IconButton Margin="15,10,0,0" HorizontalAlignment="Left" Command="{Binding GoHomeCommand}" IconSize="24" Icon="{StaticResource LeftArrow}" />
+        <support:IconButton
+            Margin="15,10,0,0"
+            HorizontalAlignment="Left"
+            Command="{Binding GoHomeCommand}"
+            Fill="{StaticResource MainIconBrush}"
+            Icon="{StaticResource LeftArrow}"
+            IconSize="32" />
+
+        <StackPanel Grid.Row="2" Margin="15,0,15,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Slider />
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    Foreground="White"
+                    Text="31:01" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -6,13 +6,12 @@
     <!--  Colors  -->
     <Color x:Key="MainBackground">#141414</Color>
     <Color x:Key="MainHoverBackground">#333333</Color>
-
+    <Color x:Key="MainIconColor">#FFFFFF</Color>
     <Color x:Key="LogoForeGround">#E50914</Color>
-
 
     <!--  Brushes  -->
     <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackground}" />
     <SolidColorBrush x:Key="MainHoverBackgroundBrush" Color="{StaticResource MainHoverBackground}" />
-
+    <SolidColorBrush x:Key="MainIconBrush" Color="{StaticResource MainIconColor}" />
     <SolidColorBrush x:Key="LogoForeGroundBrush" Color="{StaticResource LogoForeGround}" />
 </ResourceDictionary>
