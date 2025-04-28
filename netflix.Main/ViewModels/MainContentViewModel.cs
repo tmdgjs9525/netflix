@@ -5,6 +5,7 @@ using netflix.Core.Models;
 using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Dialog;
+using netflix.Navigate;
 using netflix.Parameter;
 using System.Collections.ObjectModel;
 
@@ -13,6 +14,7 @@ namespace netflix.ViewModels
     public partial class MainContentViewModel : ViewModelBase
     {
         private readonly IDialogService _dialogService;
+        private readonly INavigationService _navigationService;
 
         [ObservableProperty]
         public partial MediaInfo RecommendedItem { get; set; }
@@ -24,8 +26,9 @@ namespace netflix.ViewModels
         [ObservableProperty]
         public partial RecommendationList Test { get; set; }
 
-        public MainContentViewModel(IDialogService dialogService)
+        public MainContentViewModel(IDialogService dialogService, INavigationService navigationService)
         {
+            _navigationService = navigationService;
             _dialogService = dialogService;
 
             RecommendedItem = new MediaInfo
@@ -36,12 +39,19 @@ namespace netflix.ViewModels
 
             Test = new RecommendationList
             {
-
                 RecommendationListName = "User를 위한 콘텐츠",
                 RecommendList = GetVideoInfos()
             };
         }
 
+        [RelayCommand]
+        private void Play(MediaInfo mediaInfo)
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MoviePlayerView, new Parameters()
+            {
+                { ParameterNames.MediaInfo, mediaInfo }
+            });
+        }
 
         [RelayCommand]
         private void ShowMediaInfo(MediaInfo item)

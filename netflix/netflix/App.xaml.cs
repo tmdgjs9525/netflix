@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using netflix.Core.Regions;
 using netflix.Extensions;
+using netflix.Helper;
 using netflix.Login.ViewModels;
 using netflix.Login.Views;
 using netflix.Main.ViewModels;
@@ -12,6 +13,7 @@ using netflix.Main.Views.Dialogs;
 using netflix.Navigate;
 using netflix.ViewModels;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace netflix
@@ -34,11 +36,12 @@ namespace netflix
             Window.Current.Content = mainView;
 
             Startup += App_Startup;
-
         }
 
-        private void App_Startup(object sender, StartupEventArgs e)
+        private async void App_Startup(object sender, StartupEventArgs e)
         {
+            //await LoadFonts();
+
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
@@ -51,6 +54,13 @@ namespace netflix
             Ioc.Default.ConfigureServices(provider);
 
             return provider;
+        }
+
+        //App.xaml 리소스에 폰트를 등록하게 되면 페이지 로드후에 폰트가 적용되기 때문에 
+        //미리 폰트를 로드합니다.
+        private static async Task LoadFonts()
+        {
+            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", "MainFont");
         }
     }
 
@@ -68,7 +78,9 @@ namespace netflix
             services.AddSingletonNavigation<LoginView      , LoginViewModel>();
             services.AddSingletonNavigation<MainView       , MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-            services.AddSingletonNavigation<BookMarkedView , BookMarkedViewModel>();
+
+            services.AddTransientNavigation<BookMarkedView , BookMarkedViewModel>();
+            services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
 
             services.AddSingletonDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
 

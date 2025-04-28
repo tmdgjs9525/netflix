@@ -2,7 +2,7 @@
 { 
     public class RegionNames
     {
-        public static string MainRegion = nameof(MainRegion);
-        public static string MainContentRegion = nameof(MainContentRegion);
+        public const string MainRegion = nameof(MainRegion);
+        public const string MainContentRegion = nameof(MainContentRegion);
     }
 }

@@ -25,7 +25,6 @@
 
             <Style TargetType="ContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
             </Style>
         </ResourceDictionary>

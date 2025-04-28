@@ -1,0 +1,16 @@
+﻿<UserControl
+    x:Class="netflix.Main.Views.MoviePlayerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix.Main.Views"
+    xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <support:IconButton Margin="15,10,0,0" HorizontalAlignment="Left" Command="{Binding GoHomeCommand}" IconSize="24" Icon="{StaticResource LeftArrow}" />
+    </Grid>
+</UserControl>

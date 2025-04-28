@@ -3,13 +3,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:netflix">
 
+    <!--  Colors  -->
     <Color x:Key="MainBackground">#141414</Color>
     <Color x:Key="MainHoverBackground">#333333</Color>
 
-    
     <Color x:Key="LogoForeGround">#E50914</Color>
-    
+
+
+    <!--  Brushes  -->
     <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackground}" />
     <SolidColorBrush x:Key="MainHoverBackgroundBrush" Color="{StaticResource MainHoverBackground}" />
+
     <SolidColorBrush x:Key="LogoForeGroundBrush" Color="{StaticResource LogoForeGround}" />
 </ResourceDictionary>

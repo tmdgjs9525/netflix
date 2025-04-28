@@ -2,7 +2,6 @@
     x:Class="netflix.Main.Controls.TopMenu"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:netflix.Views.Main"
     Height="68"
     Background="{StaticResource MainBackgroundBrush}">
     <UserControl.Resources>

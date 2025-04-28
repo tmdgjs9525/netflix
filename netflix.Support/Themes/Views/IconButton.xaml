@@ -7,6 +7,7 @@
     <cnvtrs:BoolToVisibleConverter x:Key="BoolToVisibleConverter" />
     <Style TargetType="ui:IconButton">
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ui:IconButton">

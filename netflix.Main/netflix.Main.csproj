@@ -16,6 +16,7 @@
     <Compile Include="ViewModels\MainContentViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\MoviePlayerViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Controls\TopMenu.xaml.cs" />
     <Compile Include="Views\BookmarkedView.xaml.cs">
@@ -26,6 +27,7 @@
     </Compile>
     <Compile Include="Views\MainContentView.xaml.cs" />
     <Compile Include="Views\MainView.xaml.cs" />
+    <Compile Include="Views\MoviePlayerView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MoviePlayerView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

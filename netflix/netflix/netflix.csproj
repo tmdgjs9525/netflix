@@ -23,7 +23,7 @@
     <Page Include="Geometries.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -31,7 +31,8 @@
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
-    <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Helper\FontHelper.cs" />
+    <Compile Include="Views\MainPage.xaml.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
   </ItemGroup>
 
@@ -70,10 +71,6 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\BookMark\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>

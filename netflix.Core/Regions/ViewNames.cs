@@ -2,10 +2,11 @@
 {
     public class ViewNames
     {
-        public static string LoginView = "LoginView";
-        public static string MainView = "MainView";
+        public const string LoginView = nameof(LoginView);
+        public const string MainView = nameof(MainView);
 
-        public static string MainContentView = "MainContentView";
-        public static string BookMarkedView = "BookMarkedView";
+        public const string MainContentView = nameof(MainContentView);
+        public const string BookMarkedView =  nameof(BookMarkedView);
+        public const string MoviePlayerView = nameof(MoviePlayerView);
     }
 }
