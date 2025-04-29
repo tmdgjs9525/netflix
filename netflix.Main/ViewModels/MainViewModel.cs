@@ -1,16 +1,68 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Regions;
 using netflix.Navigate;
+using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels
 {
+    public partial class b : ObservableObject
+    {
+        [ObservableProperty]
+        private string _name;
+
+        [ObservableProperty]
+        private bool _isSelected;
+    }
+    public partial class a : ObservableObject
+    {
+        [ObservableProperty]
+        private string _name;
+
+        [ObservableProperty]
+        private bool _isSelected;
+
+        [ObservableProperty]
+        private ObservableCollection<b> _bs = new();
+    }
+
     public partial class MainViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 
+        [ObservableProperty]
+        private ObservableCollection<a> _as = new();
+
         public MainViewModel(INavigationService navigationService)
         {
+
+            for (int i = 0; i < 10; i++)
+            {
+                As.Add(new a()
+                {
+                    Bs = new ObservableCollection<b>()
+                    {
+                        new b()
+                        {
+                            Name = "Test"+1,
+                        },
+                        new b()
+                        {
+                            Name = "Test"+2,
+                        },
+                        new b()
+                        {
+                            Name = "Test"+3,
+                        },
+                        new b()
+                        {
+                            Name = "Test"+4,
+                        },
+                    }
+                });
+            }
+
             _navigationService = navigationService;
 
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.MainContentView);

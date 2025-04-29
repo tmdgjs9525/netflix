@@ -43,6 +43,7 @@ namespace netflix.AppInfra.Region
             //디자인 모드
             else
             {
+                // TODO : 리플렉션으로 컨트롤 가져와서 보여주기
                 var control = (ContentControl)d;
                 control.Content = e.NewValue;
             }

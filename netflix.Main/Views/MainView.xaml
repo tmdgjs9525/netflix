@@ -4,8 +4,49 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:RegionManager="clr-namespace:netflix.AppInfra.Region;assembly=netflix.AppInfra"
     xmlns:controls="clr-namespace:netflix.Main.Controls"
-    xmlns:local="clr-namespace:netflix.Main.Views">
+    xmlns:local="clr-namespace:netflix.Main.Views"
+    xmlns:vm="clr-namespace:netflix.Main.ViewModels">
+    <UserControl.Resources>
+        <!--  최상위: AnalyzeCategoryMapping  -->
+        <HierarchicalDataTemplate
+            x:Key="test"
+            DataType="{x:Type vm:a}"
+            ItemsSource="{Binding Bs}">
+            <Grid Margin="0,0,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton GroupName="a" IsChecked="{Binding IsSelected}" />
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="0,0,5,0"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Text="{Binding Name}"
+                    TextWrapping="Wrap" />
+            </Grid>
+        </HierarchicalDataTemplate>
 
+        <!--  하위: DetectionType  -->
+        <DataTemplate x:Key="testdata" DataType="{x:Type vm:b}">
+            <Grid Margin="0,0,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding IsSelected}" />
+                <TextBlock
+                    Grid.Column="1"
+                    FontSize="11"
+                    Foreground="White"
+                    Text="{Binding Name}"
+                    TextWrapping="Wrap" />
+            </Grid>
+
+        </DataTemplate>
+    </UserControl.Resources>
     <ScrollViewer Background="{StaticResource MainBackgroundBrush}" VerticalScrollBarVisibility="Visible">
         <Grid>
             <Grid.RowDefinitions>
@@ -17,6 +58,15 @@
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 RegionManager:RegionManager.RegionName="MainContentRegion" />
+
+            <TreeView
+                Grid.RowSpan="2"
+                Height="300"
+                Focusable="False"
+                ItemTemplate="{StaticResource test}"
+                ItemsSource="{Binding As}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.VerticalScrollBarVisibility="Visible" />
 
             <controls:TopMenu Grid.Row="0" VerticalAlignment="Top" />
         </Grid>
