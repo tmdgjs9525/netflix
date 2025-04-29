@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="AttachProperties\ContentControlTemplateHelper.cs" />
     <Compile Include="Converter\BoolToVisibleConverter.cs" />
     <Compile Include="Themes\UI\GradientHoverButton.cs" />
     <Compile Include="Themes\UI\IconButton.cs" />

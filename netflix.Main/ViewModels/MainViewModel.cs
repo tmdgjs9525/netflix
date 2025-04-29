@@ -23,6 +23,11 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private bool _isSelected;
 
+        partial void OnIsSelectedChanged(bool value)
+        {
+            
+        }
+
         [ObservableProperty]
         private ObservableCollection<b> _bs = new();
     }
@@ -34,8 +39,16 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private ObservableCollection<a> _as = new();
 
+        [ObservableProperty]
+        private a _a;
+
+        [ObservableProperty]
+        private b _b;
+
         public MainViewModel(INavigationService navigationService)
         {
+            A = new a() { IsSelected = true ,Name="aaaaaaaa"};
+            B = new b() { IsSelected =true ,Name="bbbbbb"};
 
             for (int i = 0; i < 10; i++)
             {
