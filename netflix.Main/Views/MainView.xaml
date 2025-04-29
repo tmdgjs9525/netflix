@@ -31,13 +31,14 @@
                 Content="{Binding A}">
                 <ContentControl.Resources>
                     <DataTemplate x:Key="test" DataType="{x:Type vm:a}">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                             <TextBlock
-                                FontSize="120" Foreground="White"
-                                FontWeight="Bold" TextWrapping="Wrap"
+                                FontSize="120"
+                                FontWeight="Bold"
+                                Foreground="White"
                                 Text="{Binding Name}"
-                                />
+                                TextWrapping="Wrap" />
                         </StackPanel>
                     </DataTemplate>
 
