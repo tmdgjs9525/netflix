@@ -12,10 +12,11 @@
                 <ResourceDictionary Source="Geometries.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium</FontFamily>
+            <!--<FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium</FontFamily>-->
 
+            <!--App.xaml.cs에서 등록-->
             <Style x:Key="page" TargetType="Page">
-                <Setter Property="FontFamily" Value="{StaticResource MainFont}" />
+                <Setter Property="FontFamily" Value="{DynamicResource MainFont}" />
             </Style>
 
             <Style TargetType="TransitioningContentControl">

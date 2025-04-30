@@ -15,6 +15,7 @@ using netflix.ViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace netflix
 {
@@ -38,9 +39,9 @@ namespace netflix
             Startup += App_Startup;
         }
 
-        private void App_Startup(object sender, StartupEventArgs e)
+        private async void App_Startup(object sender, StartupEventArgs e)
         {
-            //await LoadFonts();
+            await LoadFonts();
 
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
