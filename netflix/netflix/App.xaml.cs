@@ -16,7 +16,6 @@ using netflix.ViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace netflix
 {
@@ -64,7 +63,7 @@ namespace netflix
         //미리 폰트를 로드합니다.
         private static async Task LoadFonts()
         {
-            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", fontName : "MainFont");
+            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", fontName: "MainFont");
         }
     }
 
@@ -79,10 +78,10 @@ namespace netflix
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
 
-            services.AddSingletonNavigation<LoginView      , LoginViewModel>();
-            services.AddSingletonNavigation<MainView       , MainViewModel>();
+            services.AddSingletonNavigation<LoginView, LoginViewModel>();
+            services.AddSingletonNavigation<MainView, MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-            services.AddTransientNavigation<BookMarkedView , BookMarkedViewModel>();
+            services.AddTransientNavigation<BookMarkedView, BookMarkedViewModel>();
 
             services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
 
@@ -93,7 +92,7 @@ namespace netflix
 
         public static IServiceCollection ConfigureUser(this IServiceCollection services)
         {
-            User loggedInUser = new User(name : "Me");
+            User loggedInUser = new User(name: "Me");
             services.AddSingleton<User>(loggedInUser);
 
             return services;

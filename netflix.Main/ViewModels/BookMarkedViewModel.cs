@@ -6,7 +6,7 @@ namespace netflix.Main.ViewModels
     {
         public BookMarkedViewModel()
         {
-            
+
         }
     }
 }

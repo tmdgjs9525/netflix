@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace netflix.Core.ParameterNames
+﻿namespace netflix.Core.ParameterNames
 {
     public static class ParameterNames
     {

@@ -19,6 +19,6 @@ namespace netflix.Main.ViewModels
         {
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
         }
-        
+
     }
 }

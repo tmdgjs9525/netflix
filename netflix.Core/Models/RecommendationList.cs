@@ -1,14 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace netflix.Core.Models
 {
-    public partial class RecommendationList : ObservableObject 
+    public partial class RecommendationList : ObservableObject
     {
         [ObservableProperty]
         public partial string RecommendationListName { get; set; }

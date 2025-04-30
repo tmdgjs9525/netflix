@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using netflix.Navigate;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using netflix.Navigate;
-using CommunityToolkit.Mvvm.DependencyInjection;
 
 namespace netflix.AppInfra.Region
 {
@@ -14,9 +14,9 @@ namespace netflix.AppInfra.Region
     {
         public static readonly DependencyProperty RegionName =
         DependencyProperty.RegisterAttached(
-            "RegionName",  
-            typeof(string),        
-            typeof(RegionManager), 
+            "RegionName",
+            typeof(string),
+            typeof(RegionManager),
             new PropertyMetadata(default(string), OnRegionNameChanged)
         );
 

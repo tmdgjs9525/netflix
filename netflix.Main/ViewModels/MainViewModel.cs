@@ -26,7 +26,7 @@ namespace netflix.Main.ViewModels
 
         partial void OnIsSelectedChanged(bool value)
         {
-            
+
         }
 
         [ObservableProperty]
@@ -53,8 +53,8 @@ namespace netflix.Main.ViewModels
         {
             LoggedInUser = loggedInUser;
 
-            A = new a() { IsSelected = true ,Name="aaaaaaaa"};
-            B = new b() { IsSelected =true ,Name="bbbbbb"};
+            A = new a() { IsSelected = true, Name = "aaaaaaaa" };
+            B = new b() { IsSelected = true, Name = "bbbbbb" };
 
             for (int i = 0; i < 10; i++)
             {
@@ -99,6 +99,6 @@ namespace netflix.Main.ViewModels
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.BookMarkedView);
         }
 
-        
+
     }
 }

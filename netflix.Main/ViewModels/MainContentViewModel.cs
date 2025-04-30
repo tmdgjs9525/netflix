@@ -96,7 +96,7 @@ namespace netflix.ViewModels
                     {
                         Season = 1,
                         EpisodeNumber = 1,
-                        Title = "첫화", 
+                        Title = "첫화",
                     }
                 });
             }

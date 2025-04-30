@@ -1,6 +1,5 @@
 ﻿using netflix.Core;
 using netflix.Navigate;
-using System;
 
 namespace netflix.ViewModels
 {

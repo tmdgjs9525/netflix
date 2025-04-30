@@ -6,7 +6,7 @@
         public const string MainView = nameof(MainView);
 
         public const string MainContentView = nameof(MainContentView);
-        public const string BookMarkedView =  nameof(BookMarkedView);
+        public const string BookMarkedView = nameof(BookMarkedView);
         public const string MoviePlayerView = nameof(MoviePlayerView);
     }
 }

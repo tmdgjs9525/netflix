@@ -24,7 +24,7 @@ namespace netflix.Main.ViewModels.Dialogs
 
         public DetailMediaInfoDialogViewModel()
         {
-            
+
         }
 
         [RelayCommand]
@@ -40,7 +40,7 @@ namespace netflix.Main.ViewModels.Dialogs
 
         public void OnDialogClosed()
         {
-           
+
         }
 
         public void OnDialogOpened(Parameters parameters)

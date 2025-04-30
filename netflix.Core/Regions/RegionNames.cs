@@ -1,5 +1,5 @@
-﻿namespace netflix.Core.Regions 
-{ 
+﻿namespace netflix.Core.Regions
+{
     public class RegionNames
     {
         public const string MainRegion = nameof(MainRegion);

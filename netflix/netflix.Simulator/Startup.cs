@@ -1,5 +1,5 @@
-﻿using System;
-using OpenSilver.Simulator;
+﻿using OpenSilver.Simulator;
+using System;
 
 namespace netflix.Simulator
 {
