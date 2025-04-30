@@ -49,7 +49,7 @@ namespace netflix
 
         private IServiceProvider ServiceInitialize()
         {
-            ServiceCollection services = new ServiceCollection();
+            IServiceCollection services = new ServiceCollection();
 
             IServiceProvider provider = services.ConfigureViews()
                                                 .ConfigureUser()
