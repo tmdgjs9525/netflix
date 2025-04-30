@@ -4,10 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:RegionManager="clr-namespace:netflix.AppInfra.Region;assembly=netflix.AppInfra"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:netflix" Style="{StaticResource page}"
+    xmlns:local="clr-namespace:netflix"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Foreground="{DynamicResource Theme_TextBrush}"
+    Style="{StaticResource page}"
     mc:Ignorable="d">
+    <Grid>
+        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+    </Grid>
 
-    <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
 </Page>

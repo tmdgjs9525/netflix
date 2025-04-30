@@ -42,7 +42,6 @@
                         </StackPanel>
                     </DataTemplate>
 
-                    <!--  하위: DetectionType  -->
                     <DataTemplate x:Key="testdata" DataType="{x:Type vm:b}">
                         <Grid Margin="0">
 
@@ -55,15 +54,6 @@
                     </DataTemplate>
                 </ContentControl.Resources>
             </ContentControl>
-
-            <!--<TreeView
-                Grid.RowSpan="2"
-                Height="300"
-                Focusable="False"
-                ItemTemplate="{StaticResource test}"
-                ItemsSource="{Binding As}"
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                ScrollViewer.VerticalScrollBarVisibility="Visible" />-->
 
             <controls:TopMenu Grid.Row="0" VerticalAlignment="Top" />
         </Grid>

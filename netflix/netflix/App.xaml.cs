@@ -1,6 +1,7 @@
 ﻿using Another.Wpf.Container.Extensions;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using netflix.Core.Models;
 using netflix.Core.Regions;
 using netflix.Extensions;
 using netflix.Helper;
@@ -31,10 +32,10 @@ namespace netflix
 
             _navigationService = provider.GetRequiredService<INavigationService>();
 
-            var mainView = provider.GetRequiredService<MainPage>();
-            mainView.DataContext = provider.GetRequiredService<MainPageViewModel>();
+            var mainPage = provider.GetRequiredService<MainPage>();
+            mainPage.DataContext = provider.GetRequiredService<MainPageViewModel>();
 
-            Window.Current.Content = mainView;
+            Window.Current.Content = mainPage;
 
             Startup += App_Startup;
         }
@@ -50,7 +51,9 @@ namespace netflix
         {
             ServiceCollection services = new ServiceCollection();
 
-            IServiceProvider provider = Configure.ConfigureService(services);
+            IServiceProvider provider = services.ConfigureViews()
+                                                .ConfigureUser()
+                                                .BuildServiceProvider();
 
             Ioc.Default.ConfigureServices(provider);
 
@@ -61,14 +64,14 @@ namespace netflix
         //미리 폰트를 로드합니다.
         private static async Task LoadFonts()
         {
-            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", "MainFont");
+            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", fontName : "MainFont");
         }
     }
 
 
     internal static class Configure
     {
-        public static IServiceProvider ConfigureService(this IServiceCollection services)
+        public static IServiceCollection ConfigureViews(this IServiceCollection services)
         {
             services.AddNavigationService();
             services.AddDialogService();
@@ -79,13 +82,21 @@ namespace netflix
             services.AddSingletonNavigation<LoginView      , LoginViewModel>();
             services.AddSingletonNavigation<MainView       , MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-
             services.AddTransientNavigation<BookMarkedView , BookMarkedViewModel>();
+
             services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
 
             services.AddSingletonDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
 
-            return services.BuildServiceProvider();
+            return services;
+        }
+
+        public static IServiceCollection ConfigureUser(this IServiceCollection services)
+        {
+            User loggedInUser = new User(name : "Me");
+            services.AddSingleton<User>(loggedInUser);
+
+            return services;
         }
     }
 }

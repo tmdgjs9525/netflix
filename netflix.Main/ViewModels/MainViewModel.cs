@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
+using netflix.Core.Models;
 using netflix.Core.Regions;
 using netflix.Navigate;
 using System.Collections.ObjectModel;
@@ -37,6 +38,9 @@ namespace netflix.Main.ViewModels
         private readonly INavigationService _navigationService;
 
         [ObservableProperty]
+        public partial User LoggedInUser { get; set; }
+
+        [ObservableProperty]
         private ObservableCollection<a> _as = new();
 
         [ObservableProperty]
@@ -45,8 +49,10 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private b _b;
 
-        public MainViewModel(INavigationService navigationService)
+        public MainViewModel(INavigationService navigationService, User loggedInUser)
         {
+            LoggedInUser = loggedInUser;
+
             A = new a() { IsSelected = true ,Name="aaaaaaaa"};
             B = new b() { IsSelected =true ,Name="bbbbbb"};
 
