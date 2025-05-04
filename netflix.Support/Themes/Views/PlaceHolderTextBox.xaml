@@ -4,13 +4,13 @@
     xmlns:ui="clr-namespace:netflix.Support.Themes.UI">
 
     <Style TargetType="ui:PlaceHolderTextBox">
-        <Setter Property="FontSize" Value="24"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ui:PlaceHolderTextBox">
                     <Border
-                        x:Name="border"
+                        x:Name="templateRoot"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -42,7 +42,7 @@
                                                 <CircleEase EasingMode="EaseInOut" />
                                             </ThicknessAnimation.EasingFunction>
                                         </ThicknessAnimation>
-                                        
+
                                         <DoubleAnimation
                                             Storyboard.TargetName="tb"
                                             Storyboard.TargetProperty="FontSize"
@@ -82,8 +82,8 @@
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
                                         <ColorAnimation
-                                            Storyboard.TargetName="border"
-                                            Storyboard.TargetProperty="BorderBrush.Color"
+                                            Storyboard.TargetName="templateRoot"
+                                            Storyboard.TargetProperty="templateRoot.Color"
                                             To="Gray"
                                             Duration="0:0:0.1">
                                             <ColorAnimation.EasingFunction />

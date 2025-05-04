@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
+using netflix.Core.Models;
 using netflix.Core.Regions;
 using netflix.Navigate;
 using netflix.Parameter;
@@ -36,6 +37,7 @@ namespace netflix.Main.ViewModels
     public partial class MainViewModel : ViewModelBase, INavigateAware
     {
         private readonly INavigationService _navigationService;
+        private readonly AppState _appState;
 
         [ObservableProperty]
         private ObservableCollection<a> _as = new();
@@ -46,7 +48,10 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private b _b;
 
-        public MainViewModel(INavigationService navigationService)
+        [ObservableProperty]
+        public partial Profile CurrentProfile { get; set; }
+
+        public MainViewModel(INavigationService navigationService, AppState appState)
         {
 
 
@@ -82,6 +87,8 @@ namespace netflix.Main.ViewModels
             _navigationService = navigationService;
 
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.MainContentView);
+            _appState = appState;
+            CurrentProfile = _appState.CurrentProfile;
         }
 
         [RelayCommand]
@@ -99,7 +106,7 @@ namespace netflix.Main.ViewModels
         [RelayCommand]
         private void GoSetting()
         {
-            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.SettingView);
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.SettingView);
         }
 
         public void NavigateTo(Parameters parameters)

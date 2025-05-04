@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -42,12 +45,48 @@ namespace netflix.Support.Themes.UI
             MouseLeave += PlaceHolderTextBox_MouseLeave;
             GotFocus += PlaceHolderTextBox_GotFocus;
             LostFocus += PlaceHolderTextBox_LostFocus;
+            Loaded += PlaceHolderTextBox_Loaded;
+
+            var groups = VisualStateManager.GetVisualStateGroups(this);
+            if (groups == null)
+            {
+                Debug.WriteLine("VisualStateGroups not found.");
+            }
+            else
+            {
+                foreach (VisualStateGroup group in groups)
+                {
+                    Debug.WriteLine($"Group: {group.Name}");
+                    foreach (VisualState state in group.States)
+                    {
+                        Debug.WriteLine($"  State: {state.Name}");
+                    }
+                }
+            }
+        }
+
+        protected override void OnTextChanged(TextChangedEventArgs eventArgs)
+        {
+            CheckTrigger(); 
+        }
+
+        private void PlaceHolderTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
+        private void PlaceHolderTextBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            CheckTrigger();
         }
 
         private void PlaceHolderTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             isFocused = false;
+            CheckTrigger();
+        }
 
+        private void CheckTrigger()
+        {
             if (string.IsNullOrEmpty(Text))
             {
                 // 텍스트가 비어 있으면 Unfocused 애니메이션 실행
@@ -56,7 +95,11 @@ namespace netflix.Support.Themes.UI
             else
             {
                 // 텍스트가 있으면 애니메이션을 건너뛰고 바로 상태를 변경
-                VisualStateManager.GoToState(this, "Focused", true);
+                var a = VisualStateManager.GoToState(this, "Focused", true);
+                if (a == false)
+                {
+                    VisualStateManager.GoToState(this, "Unfocused", true);
+                }
             }
         }
 
