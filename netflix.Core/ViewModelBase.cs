@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using netflix.AppAbstractions;
+using netflix.AppInfra;
 
 namespace netflix.Core
 {

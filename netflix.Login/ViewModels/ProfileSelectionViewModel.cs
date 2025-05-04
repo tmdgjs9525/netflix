@@ -3,15 +3,19 @@ using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.Regions;
+using netflix.Data.Interfaces;
 using netflix.Navigate;
+using netflix.Parameter;
 using System.Collections.ObjectModel;
 
 namespace netflix.Login.ViewModels
 {
-    public partial class ProfileSelectionViewModel : ViewModelBase
+    public partial class ProfileSelectionViewModel : ViewModelBase, INavigateAware
     {
         #region fields
         private readonly INavigationService _navigationService;
+        private readonly IUserService _userService;
+        private readonly AppState _appState;
         private Profile _currentProfile;
         #endregion
 
@@ -19,31 +23,29 @@ namespace netflix.Login.ViewModels
         [ObservableProperty]
         public partial ObservableCollection<Profile> Profiles { get; set; }
 
-        public ProfileSelectionViewModel(INavigationService navigationService, Profile profile)
+        public ProfileSelectionViewModel(INavigationService navigationService, IUserService userService, AppState appState)
         {
-            _currentProfile = profile;
+            _userService = userService;
             _navigationService = navigationService;
-
-            Profiles = new ObservableCollection<Profile>
-            {
-                new Profile("Profile 1", "/netflix;component/Assets/Images/profile1.png"),
-                new Profile("Profile 2", "/netflix;component/Assets/Images/profile1.png"),
-                new Profile("Profile 3", "/netflix;component/Assets/Images/profile1.png"),
-                new Profile("Profile 4", "/netflix;component/Assets/Images/profile1.png"),
-            };
+            _appState = appState;
 
         }
 
         [RelayCommand]
         private void SelectProfile(Profile selectedProfile)
         {
-            _currentProfile = selectedProfile;
+            _appState.CurrentProfile = selectedProfile;
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
 
             //_navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView, new Parameter.Parameters()
             //{
             //    { ParameterNames.Profile, selectedProfile },
             //});
+        }
+
+        public async void NavigateTo(Parameters parameters)
+        {
+            Profiles = await _userService.GetUserProfilesAsync();
         }
     }
 }

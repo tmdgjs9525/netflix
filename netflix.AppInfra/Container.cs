@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using netflix.AppAbstractions;
+using netflix.AppInfra;
 using netflix.Dialog;
 using netflix.Navigate;
 using System.Windows.Controls;

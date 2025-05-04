@@ -38,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\netflix.AppInfra\netflix.AppInfra.csproj" />
     <ProjectReference Include="..\netflix.Core\netflix.Core.csproj" />
+    <ProjectReference Include="..\netflix.Data\netflix.Data.csproj" />
     <ProjectReference Include="..\netflix.Support\netflix.Support.csproj" />
   </ItemGroup>
 

@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="IViewModelBase.cs" />
+    <PackageReference Include="OpenSilver" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.2.0" />
+    <UpToDateCheckInput Remove="Dialog\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Navigation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

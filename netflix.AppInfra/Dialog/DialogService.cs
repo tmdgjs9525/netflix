@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using netflix.AppAbstractions;
+using netflix.AppInfra;
 using netflix.Parameter;
 using System;
 using System.Collections.Generic;

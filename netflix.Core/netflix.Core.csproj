@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\netflix.AppAbstractions\netflix.AppAbstractions.csproj" />
+    <ProjectReference Include="..\netflix.IViewModelBase\netflix.IViewModelBase.csproj" />
   </ItemGroup>
 
 </Project>

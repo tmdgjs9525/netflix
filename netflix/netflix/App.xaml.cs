@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.Regions;
+using netflix.Data.Interfaces;
+using netflix.Data.Services;
 using netflix.Extensions;
 using netflix.Helper;
 using netflix.Login.ViewModels;
@@ -54,6 +56,7 @@ namespace netflix
             IServiceCollection services = new ServiceCollection();
 
             IServiceProvider provider = services.ConfigureViews()
+                                                .ConfigureServices()
                                                 .ConfigureUser()
                                                 .BuildServiceProvider();
 
@@ -107,6 +110,13 @@ namespace netflix
             services.AddSingleton<Profile>(profile);
 
             services.AddSingleton<AppState>(new AppState(loggedInUser, profile));
+            return services;
+        }
+
+        public static IServiceCollection ConfigureServices(this IServiceCollection services)
+        {
+            services.AddTransient<IUserService, UserStubService>();
+
             return services;
         }
     }
