@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
-using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Navigate;
 using System.Collections.ObjectModel;

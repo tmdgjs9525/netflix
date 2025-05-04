@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
-using netflix.Core.Models;
-using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Navigate;
 using netflix.Parameter;
@@ -50,7 +48,7 @@ namespace netflix.Main.ViewModels
 
         public MainViewModel(INavigationService navigationService)
         {
-            
+
 
             A = new a() { IsSelected = true, Name = "aaaaaaaa" };
             B = new b() { IsSelected = true, Name = "bbbbbb" };

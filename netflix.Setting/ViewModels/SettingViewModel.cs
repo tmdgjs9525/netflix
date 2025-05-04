@@ -4,11 +4,6 @@ using netflix.Core.Models;
 using netflix.Core.ParameterNames;
 using netflix.Navigate;
 using netflix.Parameter;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace netflix.Setting.ViewModels
 {
@@ -19,7 +14,7 @@ namespace netflix.Setting.ViewModels
 
         public SettingViewModel()
         {
-            
+
         }
 
         public void NavigateTo(Parameters parameters)

@@ -28,7 +28,7 @@ namespace netflix.ViewModels
 
         public MainContentViewModel(IDialogService dialogService, INavigationService navigationService)
         {
-            
+
             _navigationService = navigationService;
             _dialogService = dialogService;
 

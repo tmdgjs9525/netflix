@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Extensions.Logging;
 using OpenSilver.MauiHybrid.Runner;
 
 namespace netflix.MauiHybrid
