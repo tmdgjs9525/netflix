@@ -93,11 +93,13 @@
                 <RadioButton Content="언어 별로 찾아보기" Style="{StaticResource menuButton}" />
             </StackPanel>
 
-            <TextBlock VerticalAlignment="Center"
+            <Button
                 HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Command="{Binding GoSettingCommand}"
                 FontSize="24"
                 Foreground="White"
-                Text="{Binding LoggedInUser.Name}" />
+                Content="{Binding CurrentProfile.Name}" />
         </Grid>
     </Border>
 

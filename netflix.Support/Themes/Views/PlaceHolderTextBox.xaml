@@ -4,6 +4,8 @@
     xmlns:ui="clr-namespace:netflix.Support.Themes.UI">
 
     <Style TargetType="ui:PlaceHolderTextBox">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ui:PlaceHolderTextBox">

@@ -1,6 +1,7 @@
 ﻿using Another.Wpf.Container.Extensions;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.Regions;
 using netflix.Extensions;
@@ -12,6 +13,8 @@ using netflix.Main.ViewModels.Dialogs;
 using netflix.Main.Views;
 using netflix.Main.Views.Dialogs;
 using netflix.Navigate;
+using netflix.Setting.ViewModels;
+using netflix.Setting.Views;
 using netflix.ViewModels;
 using System;
 using System.Threading.Tasks;
@@ -78,14 +81,19 @@ namespace netflix
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
 
-            services.AddSingletonNavigation<LoginView, LoginViewModel>();
+            services.AddTransientNavigation<LoginView, LoginViewModel>();
+            services.AddTransientNavigation<ProfileSelectionView, ProfileSelectionViewModel>();
+
             services.AddSingletonNavigation<MainView, MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
             services.AddTransientNavigation<BookMarkedView, BookMarkedViewModel>();
 
             services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
 
-            services.AddSingletonDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
+            services.AddTransientNavigation<SettingView, SettingViewModel>();
+
+
+            services.AddTransientDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
 
             return services;
         }
@@ -95,6 +103,10 @@ namespace netflix
             User loggedInUser = new User(name: "Me");
             services.AddSingleton<User>(loggedInUser);
 
+            Profile profile = new Profile(name: "Profile1", imagePath: "/netflix;component/Assets/Images/profile1.png");
+            services.AddSingleton<Profile>(profile);
+
+            services.AddSingleton<AppState>(new AppState(loggedInUser, profile));
             return services;
         }
     }

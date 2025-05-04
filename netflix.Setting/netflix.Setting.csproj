@@ -5,15 +5,11 @@
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
     <LangVersion>preview</LangVersion>
-	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Themes\UI\Profile.cs" />
-    <Compile Include="ViewModels\ProfileSelectionViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="Views\LoginView.xaml.cs" />
-    <Compile Include="Views\ProfileSelectionView.xaml.cs" />
+    <Compile Include="ViewModels\SettingViewModel.cs" />
+    <Compile Include="Views\SettingView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,16 +17,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Themes\Views\" />
+    <Folder Include="Themes\UI\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Views\Profile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoginView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProfileSelectionView.xaml">
+    <Page Include="Views\SettingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

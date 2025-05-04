@@ -21,7 +21,7 @@ namespace netflix.Login.ViewModels
         private void Login()
         {
             //App.Navigate(ViewNames.MainView);
-            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.ProfileSelectionView);
         }
     }
 }

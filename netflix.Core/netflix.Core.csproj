@@ -9,8 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="AppState.cs" />
     <Compile Include="Models\Episode.cs" />
     <Compile Include="Models\MediaInfo.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\RecommendationList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Parameters\ParameterNames.cs">

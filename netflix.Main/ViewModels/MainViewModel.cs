@@ -2,8 +2,10 @@
 using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
+using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Navigate;
+using netflix.Parameter;
 using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels
@@ -33,12 +35,9 @@ namespace netflix.Main.ViewModels
         private ObservableCollection<b> _bs = new();
     }
 
-    public partial class MainViewModel : ViewModelBase
+    public partial class MainViewModel : ViewModelBase, INavigateAware
     {
         private readonly INavigationService _navigationService;
-
-        [ObservableProperty]
-        public partial User LoggedInUser { get; set; }
 
         [ObservableProperty]
         private ObservableCollection<a> _as = new();
@@ -49,9 +48,9 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private b _b;
 
-        public MainViewModel(INavigationService navigationService, User loggedInUser)
+        public MainViewModel(INavigationService navigationService)
         {
-            LoggedInUser = loggedInUser;
+            
 
             A = new a() { IsSelected = true, Name = "aaaaaaaa" };
             B = new b() { IsSelected = true, Name = "bbbbbb" };
@@ -99,6 +98,18 @@ namespace netflix.Main.ViewModels
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.BookMarkedView);
         }
 
+        [RelayCommand]
+        private void GoSetting()
+        {
+            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.SettingView);
+        }
 
+        public void NavigateTo(Parameters parameters)
+        {
+            //if (parameters.ContainsKey(ParameterNames.Profile))
+            //{
+            //    CurrentProfile = parameters.GetValue<Profile>(ParameterNames.Profile);
+            //}
+        }
     }
 }
