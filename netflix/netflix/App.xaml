@@ -7,7 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/netflix.Main;component/Themes/Generic.xaml" />
-                <ResourceDictionary Source="/netflix.Login;component/Themes/Generic.xaml" />
+                <!--<ResourceDictionary Source="/netflix.Login;component/Themes/Generic.xaml" />-->
                 <ResourceDictionary Source="/netflix.Support;component/Themes/Generic.xaml" />
                 <ResourceDictionary Source="Colors.xaml" />
                 <ResourceDictionary Source="Geometries.xaml" />

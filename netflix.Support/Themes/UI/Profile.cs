@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 
-namespace netflix.Login.Themes.UI
+namespace netflix.Support.Themes.UI
 {
-    internal class Profile : Button
+    public class Profile : Button
     {
         public Profile()
         {

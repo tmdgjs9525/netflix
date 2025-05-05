@@ -14,6 +14,9 @@
     <Compile Include="Themes\UI\GradientHoverButton.cs" />
     <Compile Include="Themes\UI\IconButton.cs" />
     <Compile Include="Themes\UI\PlaceHolderTextBox.cs" />
+    <Compile Include="Themes\UI\Profile.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Views\PlaceHolderTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

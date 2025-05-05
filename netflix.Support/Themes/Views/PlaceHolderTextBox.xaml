@@ -4,7 +4,7 @@
     xmlns:ui="clr-namespace:netflix.Support.Themes.UI">
 
     <Style TargetType="ui:PlaceHolderTextBox">
-        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontSize" Value="20" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
@@ -30,8 +30,8 @@
                                 Foreground="{TemplateBinding Foreground}" />
                         </Grid>
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="FocusStates">
-                                <VisualState x:Name="Focused">
+                            <VisualStateGroup x:Name="CommonState">
+                                <VisualState x:Name="Normal">
                                     <Storyboard>
                                         <ThicknessAnimation
                                             Storyboard.TargetName="tb"
@@ -61,7 +61,7 @@
                                         </ColorAnimation>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState x:Name="Unfocused">
+                                <!--<VisualState x:Name="Unfocused">
                                     <Storyboard>
                                         <ThicknessAnimation
                                             Storyboard.TargetName="tb"
@@ -89,7 +89,7 @@
                                             <ColorAnimation.EasingFunction />
                                         </ColorAnimation>
                                     </Storyboard>
-                                </VisualState>
+                                </VisualState>-->
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Border>

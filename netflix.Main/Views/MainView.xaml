@@ -14,7 +14,7 @@
     <ScrollViewer Background="{StaticResource MainBackgroundBrush}" VerticalScrollBarVisibility="Visible">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="68" />
+                <RowDefinition Height="100" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
