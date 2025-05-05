@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,80 +43,82 @@ namespace netflix.Support.Themes.UI
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            //CheckTrigger();
 
-            MouseLeave += PlaceHolderTextBox_MouseLeave;
-            GotFocus += PlaceHolderTextBox_GotFocus;
-            LostFocus += PlaceHolderTextBox_LostFocus;
-            Loaded += PlaceHolderTextBox_Loaded;
+            //MouseLeave += PlaceHolderTextBox_MouseLeave;
+            //GotFocus += PlaceHolderTextBox_GotFocus;
+            //LostFocus += PlaceHolderTextBox_LostFocus;
+            //Loaded += PlaceHolderTextBox_Loaded;
 
-            var groups = VisualStateManager.GetVisualStateGroups(this);
-            if (groups == null)
-            {
-                Debug.WriteLine("VisualStateGroups not found.");
-            }
-            else
-            {
-                foreach (VisualStateGroup group in groups)
-                {
-                    Debug.WriteLine($"Group: {group.Name}");
-                    foreach (VisualState state in group.States)
-                    {
-                        Debug.WriteLine($"  State: {state.Name}");
-                    }
-                }
-            }
+            //groups = VisualStateManager.GetVisualStateGroups(t).Cast<VisualStateGroup>().ToList();
+            //if (groups == null)
+            //{
+            //    Debug.WriteLine("VisualStateGroups not found.");
+            //}
+            //else
+            //{
+            //    foreach (VisualStateGroup group in groups)
+            //    {
+            //        Debug.WriteLine($"Group: {group.Name}");
+            //        foreach (VisualState state in group.States)
+            //        {
+            //            Debug.WriteLine($"  State: {state.Name}");
+            //        }
+            //    }
+            //}
         }
 
-        protected override void OnTextChanged(TextChangedEventArgs eventArgs)
-        {
-            CheckTrigger(); 
-        }
+        //private void PlaceHolderTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //}
 
-        private void PlaceHolderTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
+        //private void PlaceHolderTextBox_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    CheckTrigger();
+        //}
 
-        private void PlaceHolderTextBox_Loaded(object sender, RoutedEventArgs e)
-        {
-            CheckTrigger();
-        }
+        //private void PlaceHolderTextBox_LostFocus(object sender, RoutedEventArgs e)
+        //{
+        //    isFocused = false;
+        //    CheckTrigger();
+        //}
 
-        private void PlaceHolderTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            isFocused = false;
-            CheckTrigger();
-        }
+        //private void CheckTrigger()
+        //{
+        //    if (string.IsNullOrEmpty(Text))
+        //    {
+        //        // 텍스트가 비어 있으면 Unfocused 애니메이션 실행
+        //        VisualStateManager.GoToElementState(this, "Unfocused", true);
+        //    }
+        //    else
+        //    {
 
-        private void CheckTrigger()
-        {
-            if (string.IsNullOrEmpty(Text))
-            {
-                // 텍스트가 비어 있으면 Unfocused 애니메이션 실행
-                VisualStateManager.GoToState(this, "Unfocused", true);
-            }
-            else
-            {
-                // 텍스트가 있으면 애니메이션을 건너뛰고 바로 상태를 변경
-                var a = VisualStateManager.GoToState(this, "Focused", true);
-                if (a == false)
-                {
-                    VisualStateManager.GoToState(this, "Unfocused", true);
-                }
-            }
-        }
+        //        // 텍스트가 있으면 애니메이션을 건너뛰고 바로 상태를 변경
+        //        var a = VisualStateManager.GoToElementState(this, "Focused", true);
+        //        if (a == false)
+        //        {
+        //            VisualStateManager.GoToElementState(this, "Unfocused", true);
+        //        }
+        //    }
+        //}
 
-        private void PlaceHolderTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            base.OnGotFocus(e);
-            isFocused = true;
-        }
+        //private void PlaceHolderTextBox_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    base.OnGotFocus(e);
+        //    isFocused = true;
+        //}
 
-        private void PlaceHolderTextBox_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            if (string.IsNullOrEmpty(Text) && isFocused is false)
-            {
-                VisualStateManager.GoToState(this, "Unfocused", true);
-            }
-        }
+        //private void PlaceHolderTextBox_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(Text) && isFocused is false)
+        //    {
+        //       var a = VisualStateManager.GoToState(this, "Unfocused", true);
+
+        //        if (a)
+        //        {
+
+        //        }
+        //    }
+        //}
     }
 }

@@ -10,7 +10,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ui:PlaceHolderTextBox">
                     <Border
-                        x:Name="templateRoot"
+                        x:Name="border"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"

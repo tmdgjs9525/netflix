@@ -19,7 +19,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Orientation="Vertical">
-            <support:PlaceHolderTextBox PlaceholderText="사용자 이름" Text="{Binding CurrentProfile.Name,Mode=TwoWay}" />
+            <support:PlaceHolderTextBox PlaceholderText="사용자 이름" Text="{Binding CurrentProfile.Name, Mode=TwoWay}" />
         </StackPanel>
 
     </Grid>
