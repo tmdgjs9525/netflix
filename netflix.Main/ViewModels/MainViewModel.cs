@@ -109,6 +109,12 @@ namespace netflix.Main.ViewModels
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.SettingView);
         }
 
+        [RelayCommand]
+        private void Logout()
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
+        }
+
         public void NavigateTo(Parameters parameters)
         {
             //if (parameters.ContainsKey(ParameterNames.Profile))

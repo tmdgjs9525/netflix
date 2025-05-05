@@ -10,7 +10,7 @@
     Style="{StaticResource page}"
     mc:Ignorable="d">
     <Grid>
-        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+        <ContentControl RegionManager:RegionManager.RegionName="MainRegion" />
     </Grid>
 
 </Page>

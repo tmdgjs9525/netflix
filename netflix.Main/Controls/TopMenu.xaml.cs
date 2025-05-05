@@ -8,5 +8,10 @@ namespace netflix.Main.Controls
         {
             this.InitializeComponent();
         }
+
+        private void Profile_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ProfilePopup.IsOpen = !ProfilePopup.IsOpen;
+        }
     }
 }

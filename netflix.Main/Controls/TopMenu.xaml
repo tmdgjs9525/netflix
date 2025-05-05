@@ -112,8 +112,20 @@
                 VerticalAlignment="Top">
                 <support:Profile
                     Width="50"
-                    Command="{Binding DataContext.GoSettingCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Click="Profile_Click"
                     DataContext="{Binding CurrentProfile}" />
+
+                <Popup x:Name="ProfilePopup" Placement="Bottom">
+                    <Border
+                        Background="{StaticResource MainBackgroundBrush}"
+                        BorderBrush="{StaticResource MainBackgroundBrush}"
+                        BorderThickness="1">
+                        <StackPanel Orientation="Vertical">
+                            <Button Command="{Binding GoSettingCommand}" Content="프로필 설정" />
+                            <Button Command="{Binding LogoutCommand}" Content="로그아웃" />
+                        </StackPanel>
+                    </Border>
+                </Popup>
             </StackPanel>
         </Grid>
     </Border>
