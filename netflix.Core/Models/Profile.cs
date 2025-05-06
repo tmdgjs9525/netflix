@@ -10,7 +10,7 @@ namespace netflix.Core.Models
         [ObservableProperty]
         public partial string ImagePath { get; set; }
 
-        public Profile(string name, string imagePath)
+        public Profile(string name = "", string imagePath = "/netflix;component/Assets/Images/profile1.png")
         {
             Name = name;
             ImagePath = imagePath;

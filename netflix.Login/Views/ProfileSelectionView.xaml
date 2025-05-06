@@ -5,25 +5,45 @@
     xmlns:support="clr-namespace:netflix.Support.Themes.UI;assembly=netflix.Support">
 
     <Grid Background="{StaticResource MainBackgroundBrush}">
-        <ItemsControl
+        <WrapPanel
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            ItemsSource="{Binding Profiles}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <support:Profile
-                        Width="100"
-                        Height="120"
-                        Margin="50,50,0,0"
-                        Command="{Binding DataContext.SelectProfileCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                        CommandParameter="{Binding .}" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+            Orientation="Horizontal">
+            <ItemsControl ItemsSource="{Binding Profiles}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <support:Profile
+                            Width="100"
+                            Height="120"
+                            Margin="50,0,0,0"
+                            Command="{Binding DataContext.SelectProfileCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CommandParameter="{Binding .}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <support:IconButton
+                Width="50"
+                Height="50"
+                Margin="50,0,0,0"
+                VerticalAlignment="Center"
+                Background="#232323"
+                BorderBrush="#919191"
+                BorderThickness="2"
+                Command="{Binding AddProfileCommand}"
+                CornerRadius="100"
+                Fill="White"
+                FontSize="24"
+                Foreground="Black"
+                Icon="{StaticResource PlusIcon}"
+                IconSize="24"
+                UseText="False" />
+        </WrapPanel>
+
     </Grid>
 </UserControl>

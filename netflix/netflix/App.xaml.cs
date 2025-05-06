@@ -10,6 +10,7 @@ using netflix.Extensions;
 using netflix.Helper;
 using netflix.Login.ViewModels;
 using netflix.Login.Views;
+using netflix.Login.Views.Dialogs;
 using netflix.Main.ViewModels;
 using netflix.Main.ViewModels.Dialogs;
 using netflix.Main.Views;
@@ -86,6 +87,7 @@ namespace netflix
 
             services.AddTransientNavigation<LoginView, LoginViewModel>();
             services.AddTransientNavigation<ProfileSelectionView, ProfileSelectionViewModel>();
+            services.AddTransientDialog<AddProfileDialogView, AddProfileDialogViewModel>();
 
             services.AddSingletonNavigation<MainView, MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
