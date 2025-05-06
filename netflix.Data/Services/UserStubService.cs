@@ -6,7 +6,7 @@ namespace netflix.Data.Services
 {
     public class UserStubService : IUserService
     {
-        public async Task<ObservableCollection<Profile>> GetUserProfilesAsync()
+        public async Task<ObservableCollection<Profile>> GetProfilesByUser(User user)
         {
             await Task.Delay(10); // 비동기 호출처럼 만들기 위한 더미 딜레이
 
@@ -17,6 +17,13 @@ namespace netflix.Data.Services
                 new Profile("Profile 3", "/netflix;component/Assets/Images/profile1.png"),
                 new Profile("Profile 4", "/netflix;component/Assets/Images/profile1.png"),
             };
+        }
+
+        public async Task<User> GetUserAsync()
+        {
+            await Task.Delay(10); // 비동기 호출처럼 만들기 위한 더미 딜레이
+
+            return new User("Me");
         }
     }
 }

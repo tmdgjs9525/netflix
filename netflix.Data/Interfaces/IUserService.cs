@@ -11,6 +11,7 @@ namespace netflix.Data.Interfaces
 {
     public interface IUserService
     {
-        Task<ObservableCollection<Profile>> GetUserProfilesAsync();
+        Task<User> GetUserAsync();
+        Task<ObservableCollection<Profile>> GetProfilesByUser(User user);
     }
 }

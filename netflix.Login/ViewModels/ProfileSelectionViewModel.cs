@@ -23,7 +23,7 @@ namespace netflix.Login.ViewModels
 
 
         [ObservableProperty]
-        public partial ObservableCollection<Profile> Profiles { get; set; }
+        public partial User CurrentUser { get; set; } = null!;
 
         public ProfileSelectionViewModel(INavigationService navigationService,IDialogService dialogService ,IUserService userService, AppState appState)
         {
@@ -36,13 +36,13 @@ namespace netflix.Login.ViewModels
         [RelayCommand]
         private void AddProfile()
         {
-            _dialogService.ShowDialog(ViewNames.AddProfileDialogView, callback : (c) =>
+            _dialogService.ShowDialog(ViewNames.AddProfileDialogView, callback : (callBackValue) =>
             {
-                var parameters = c.Parameters;
+                var parameters = callBackValue.Parameters;
 
                 if (parameters.ContainsKey(ParameterNames.Profile))
                 {
-                    Profiles.Add(parameters.GetValue<Profile>(ParameterNames.Profile));
+                    CurrentUser.Profiles.Add(parameters.GetValue<Profile>(ParameterNames.Profile));
                 }
             });
         }
@@ -52,16 +52,11 @@ namespace netflix.Login.ViewModels
         {
             _appState.CurrentProfile = selectedProfile;
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
-
-            //_navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView, new Parameter.Parameters()
-            //{
-            //    { ParameterNames.Profile, selectedProfile },
-            //});
         }
 
-        public async void NavigateTo(Parameters parameters)
+        public void NavigateTo(Parameters parameters)
         {
-            Profiles = await _userService.GetUserProfilesAsync();
+            CurrentUser = _appState.LoggedInUser;
         }
     }
 }

@@ -49,6 +49,10 @@ namespace netflix
         {
             await LoadFonts();
 
+            var user = Ioc.Default.GetRequiredService<User>();
+
+            user.Profiles = await Ioc.Default.GetRequiredService<IUserService>().GetProfilesByUser(user);
+
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.LoginView);
         }
 
@@ -111,7 +115,7 @@ namespace netflix
             Profile profile = new Profile(name: "Profile1", imagePath: "/netflix;component/Assets/Images/profile1.png");
             services.AddSingleton<Profile>(profile);
 
-            services.AddSingleton<AppState>(new AppState(loggedInUser, profile));
+            services.AddSingleton<AppState>(new AppState(loggedInUser));
             return services;
         }
 

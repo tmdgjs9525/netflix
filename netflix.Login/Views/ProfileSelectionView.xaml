@@ -9,7 +9,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Orientation="Horizontal">
-            <ItemsControl ItemsSource="{Binding Profiles}">
+            <ItemsControl ItemsSource="{Binding CurrentUser.Profiles}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" />

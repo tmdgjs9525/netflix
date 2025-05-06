@@ -9,12 +9,12 @@ namespace netflix.Core
         public partial User LoggedInUser { get; set; }
 
         [ObservableProperty]
-        public partial Profile CurrentProfile { get; set; }
+        public partial Profile? CurrentProfile { get; set; }
 
-        public AppState(User user, Profile profile)
+        public AppState(User user)
         {
             LoggedInUser = user;
-            CurrentProfile = profile;
         }
+
     }
 }
