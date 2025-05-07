@@ -18,7 +18,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TransitioningContentControl
+            <ContentControl
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 RegionManager:RegionManager.RegionName="MainContentRegion" />
