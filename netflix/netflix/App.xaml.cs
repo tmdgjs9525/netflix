@@ -121,6 +121,7 @@ namespace netflix
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
             services.AddTransient<IUserService, UserStubService>();
+            services.AddTransient<IMediaInfoService, MediaInfoStubService>();
 
             return services;
         }
