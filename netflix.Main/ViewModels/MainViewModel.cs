@@ -5,48 +5,19 @@ using netflix.Core.Models;
 using netflix.Core.Regions;
 using netflix.ViewManager.Navigate;
 using netflix.ViewManager.Parameter;
-using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels
 {
-    public partial class parentab : ObservableObject
-    {
-        [ObservableProperty]
-        private string _name = string.Empty;
-
-        [ObservableProperty]
-        private bool _isSelected;
-    }
-    public partial class b : parentab
-    { 
-
-    }
-
-    public partial class a : parentab
-    {
-
-    }
-
     public partial class MainViewModel : ViewModelBase, INavigateAware
     {
         private readonly INavigationService _navigationService;
         private readonly AppState _appState;
 
         [ObservableProperty]
-        private ObservableCollection<parentab> _as = new();
-
-
-        [ObservableProperty]
         public partial Profile CurrentProfile { get; set; }
 
         public MainViewModel(INavigationService navigationService, AppState appState)
         {
-            for (int i = 0; i < 5; i++)
-            {
-                As.Add(new a() { IsSelected = true, Name = "aaaaaaaa" });
-                As.Add(new b() { IsSelected = true, Name = "bbbbbb" });
-            }
-           
             _navigationService = navigationService;
 
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.MainContentView);
@@ -64,6 +35,12 @@ namespace netflix.Main.ViewModels
         private void GoBookMarked()
         {
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.BookMarkedView);
+        }
+
+        [RelayCommand]
+        private void GoContentControl()
+        {
+            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.ContentControlView);
         }
 
         [RelayCommand]

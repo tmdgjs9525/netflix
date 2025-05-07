@@ -23,44 +23,7 @@
                 Grid.RowSpan="2"
                 RegionManager:RegionManager.RegionName="MainContentRegion" />
 
-            <ItemsControl
-                Grid.RowSpan="2"
-                HorizontalAlignment="Center"
-                ItemsSource="{Binding As}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ContentControl
-                            attach:ContentControlTemplateHelper.EnableAutoTemplate="True"
-                            Background="Blue"
-                            Content="{Binding .}">
-                            <ContentControl.Resources>
-                                <DataTemplate x:Key="test" DataType="{x:Type vm:a}">
-                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                        <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" />
-                                        <TextBlock
-                                            FontSize="30"
-                                            FontWeight="Bold"
-                                            Foreground="White"
-                                            Text="{Binding Name}"
-                                            TextWrapping="Wrap" />
-                                    </StackPanel>
-                                </DataTemplate>
-
-                                <DataTemplate x:Key="testdata" DataType="{x:Type vm:b}">
-                                    <Grid Margin="0">
-
-                                        <TextBlock
-                                            FontSize="20"
-                                            Foreground="Red"
-                                            Text="{Binding Name, Mode=TwoWay}" />
-                                    </Grid>
-
-                                </DataTemplate>
-                            </ContentControl.Resources>
-                        </ContentControl>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            
 
 
             <controls:TopMenu Grid.Row="0" VerticalAlignment="Top" />

@@ -94,6 +94,7 @@ namespace netflix
 
             services.AddSingletonNavigation<MainView, MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
+            services.AddTransientNavigation<ContentControlView, ContentControlViewModel>();
             services.AddTransientNavigation<BookMarkedView, BookMarkedViewModel>();
 
             services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
