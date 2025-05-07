@@ -12,7 +12,7 @@ namespace netflix.Main.ViewModels
     public partial class b : ObservableObject
     {
         [ObservableProperty]
-        private string _name;
+        private string _name = string.Empty;
 
         [ObservableProperty]
         private bool _isSelected;
@@ -20,7 +20,7 @@ namespace netflix.Main.ViewModels
     public partial class a : ObservableObject
     {
         [ObservableProperty]
-        private string _name;
+        private string _name = string.Empty;
 
         [ObservableProperty]
         private bool _isSelected;
@@ -88,7 +88,7 @@ namespace netflix.Main.ViewModels
 
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.MainContentView);
             _appState = appState;
-            CurrentProfile = _appState.CurrentProfile;
+            CurrentProfile = _appState.CurrentProfile!;
         }
 
         [RelayCommand]
@@ -104,9 +104,15 @@ namespace netflix.Main.ViewModels
         }
 
         [RelayCommand]
-        private void GoSetting()
+        private void ProfileSetting()
         {
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.SettingView);
+        }
+
+        [RelayCommand]
+        private void SelectProFile()
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.ProfileSelectionView);
         }
 
         [RelayCommand]

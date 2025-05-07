@@ -121,7 +121,8 @@
                         BorderBrush="{StaticResource MainBackgroundBrush}"
                         BorderThickness="1">
                         <StackPanel Orientation="Vertical">
-                            <Button Command="{Binding GoSettingCommand}" Content="프로필 설정" />
+                            <Button Command="{Binding ProfileSettingCommand}" Content="프로필 설정" />
+                            <Button Command="{Binding SelectProFileCommand}" Content="프로필 선택" />
                             <Button Command="{Binding LogoutCommand}" Content="로그아웃" />
                         </StackPanel>
                     </Border>

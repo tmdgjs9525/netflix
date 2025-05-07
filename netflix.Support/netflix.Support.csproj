@@ -4,8 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
-	  <Nullable>enable</Nullable>
-
+	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

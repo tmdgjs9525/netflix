@@ -11,7 +11,7 @@ namespace netflix.Support.Themes.UI
 {
     public class PlaceHolderTextBox : TextBox
     {
-        bool isFocused = false;
+        //bool isFocused = false;
 
         public CornerRadius CornerRadius
         {
