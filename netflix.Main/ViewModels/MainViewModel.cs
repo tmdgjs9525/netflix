@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels
 {
-    public partial class b : ObservableObject
+    public partial class parentab : ObservableObject
     {
         [ObservableProperty]
         private string _name = string.Empty;
@@ -17,21 +17,14 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private bool _isSelected;
     }
-    public partial class a : ObservableObject
+    public partial class b : parentab
+    { 
+
+    }
+
+    public partial class a : parentab
     {
-        [ObservableProperty]
-        private string _name = string.Empty;
 
-        [ObservableProperty]
-        private bool _isSelected;
-
-        partial void OnIsSelectedChanged(bool value)
-        {
-
-        }
-
-        [ObservableProperty]
-        private ObservableCollection<b> _bs = new();
     }
 
     public partial class MainViewModel : ViewModelBase, INavigateAware
@@ -40,50 +33,20 @@ namespace netflix.Main.ViewModels
         private readonly AppState _appState;
 
         [ObservableProperty]
-        private ObservableCollection<a> _as = new();
+        private ObservableCollection<parentab> _as = new();
 
-        [ObservableProperty]
-        private a _a;
-
-        [ObservableProperty]
-        private b _b;
 
         [ObservableProperty]
         public partial Profile CurrentProfile { get; set; }
 
         public MainViewModel(INavigationService navigationService, AppState appState)
         {
-
-
-            A = new a() { IsSelected = true, Name = "aaaaaaaa" };
-            B = new b() { IsSelected = true, Name = "bbbbbb" };
-
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                As.Add(new a()
-                {
-                    Bs = new ObservableCollection<b>()
-                    {
-                        new b()
-                        {
-                            Name = "Test"+1,
-                        },
-                        new b()
-                        {
-                            Name = "Test"+2,
-                        },
-                        new b()
-                        {
-                            Name = "Test"+3,
-                        },
-                        new b()
-                        {
-                            Name = "Test"+4,
-                        },
-                    }
-                });
+                As.Add(new a() { IsSelected = true, Name = "aaaaaaaa" });
+                As.Add(new b() { IsSelected = true, Name = "bbbbbb" });
             }
-
+           
             _navigationService = navigationService;
 
             _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.MainContentView);
