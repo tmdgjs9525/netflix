@@ -6,9 +6,8 @@ using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
 using netflix.Data.Interfaces;
 using netflix.Dialog;
-using netflix.Navigate;
-using netflix.Parameter;
-using System.Collections.ObjectModel;
+using netflix.ViewManager.Navigate;
+using netflix.ViewManager.Parameter;
 
 namespace netflix.Login.ViewModels
 {

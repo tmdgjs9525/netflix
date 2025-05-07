@@ -3,7 +3,7 @@ using netflix.AppInfra;
 using netflix.Dialog;
 using System.Windows.Controls;
 
-namespace netflix.Extensions
+namespace netflix.ViewManager.Extensions
 {
     public static class DialogServiceExtensions
     {

@@ -3,10 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.ParameterNames;
-using netflix.Core.Regions;
 using netflix.Dialog;
-using netflix.Navigate;
-using netflix.Parameter;
+using netflix.ViewManager.Navigate;
+using netflix.ViewManager.Parameter;
 using System;
 
 namespace netflix.Login.ViewModels

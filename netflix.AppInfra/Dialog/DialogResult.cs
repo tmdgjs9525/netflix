@@ -1,4 +1,4 @@
-﻿using netflix.Parameter;
+﻿using netflix.ViewManager.Parameter;
 
 namespace netflix.Dialog
 {

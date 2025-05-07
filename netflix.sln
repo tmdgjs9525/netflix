@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflix.Login", "netflix.Login\netflix.Login.csproj", "{858AF2E1-9216-46E1-B717-C3876F3CE052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflix.AppInfra", "netflix.AppInfra\netflix.AppInfra.csproj", "{1B74F65C-068F-DC17-8BA9-F30F5A5F7F2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflix.ViewManager", "netflix.AppInfra\netflix.ViewManager.csproj", "{1B74F65C-068F-DC17-8BA9-F30F5A5F7F2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netflix.Core", "netflix.Core\netflix.Core.csproj", "{5A07C76A-E47D-E688-699B-2FB18A6A5F8B}"
 EndProject

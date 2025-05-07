@@ -1,5 +1,5 @@
 ﻿using netflix.AppInfra;
-using netflix.Parameter;
+using netflix.ViewManager.Parameter;
 using System;
 using System.Windows.Controls;
 

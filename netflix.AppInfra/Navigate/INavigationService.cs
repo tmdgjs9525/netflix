@@ -1,8 +1,8 @@
 ﻿using netflix.AppInfra;
-using netflix.Parameter;
+using netflix.ViewManager.Parameter;
 using System.Windows.Controls;
 
-namespace netflix.Navigate
+namespace netflix.ViewManager.Navigate
 {
     public interface INavigationService
     {

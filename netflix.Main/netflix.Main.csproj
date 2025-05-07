@@ -67,7 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\netflix.AppInfra\netflix.AppInfra.csproj" />
+    <ProjectReference Include="..\netflix.AppInfra\netflix.ViewManager.csproj" />
     <ProjectReference Include="..\netflix.Core\netflix.Core.csproj" />
     <ProjectReference Include="..\netflix.Support\netflix.Support.csproj" />
   </ItemGroup>

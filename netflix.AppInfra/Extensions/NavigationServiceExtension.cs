@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using netflix.AppInfra;
-using netflix.Navigate;
+using netflix.ViewManager.Navigate;
 using System.Windows.Controls;
 
-namespace Another.Wpf.Container.Extensions
+namespace netflix.ViewManager.Extensions
 {
     public static class NavigationServiceExtensions
     {

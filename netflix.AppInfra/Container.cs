@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using netflix.AppInfra;
 using netflix.Dialog;
-using netflix.Navigate;
+using netflix.ViewManager.Navigate;
 using System.Windows.Controls;
-using NavigationService = netflix.Navigate.NavigationService;
 
-namespace netflix
+
+namespace netflix.ViewManager
 {
     public class Container
     {

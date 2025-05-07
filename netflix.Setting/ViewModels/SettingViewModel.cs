@@ -4,8 +4,8 @@ using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
-using netflix.Navigate;
-using netflix.Parameter;
+using netflix.ViewManager.Navigate;
+using netflix.ViewManager.Parameter;
 
 namespace netflix.Setting.ViewModels
 {

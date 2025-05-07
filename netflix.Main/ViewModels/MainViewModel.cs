@@ -3,8 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.Regions;
-using netflix.Navigate;
-using netflix.Parameter;
+using netflix.ViewManager.Navigate;
+using netflix.ViewManager.Parameter;
 using System.Collections.ObjectModel;
 
 namespace netflix.Main.ViewModels

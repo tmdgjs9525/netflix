@@ -4,7 +4,7 @@ using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.ParameterNames;
 using netflix.Dialog;
-using netflix.Parameter;
+using netflix.ViewManager.Parameter;
 using System;
 using System.Collections.ObjectModel;
 

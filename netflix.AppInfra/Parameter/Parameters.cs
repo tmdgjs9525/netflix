@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace netflix.Parameter
+namespace netflix.ViewManager.Parameter
 {
     public class Parameters : Dictionary<string, object>
     {
