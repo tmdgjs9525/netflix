@@ -1,0 +1,195 @@
+﻿<UserControl
+    x:Class="netflix.Main.Views.HtmlPresenterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:netflix.Main.Views">
+
+    <Grid Background="Gray">
+        <Border Width="500" HorizontalAlignment="Center">
+            <native:HtmlPresenter xmlns:native="using:CSHTML5.Native.Html.Controls">
+
+                <style type="text/css">
+                    .sampleTable table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    background-color: #ffffff
+                    }
+                    .sampleTable th, .sampleTable td {
+                    text-align: left;
+                    padding: 8px;
+                    }
+                    .sampleTable tr:nth-child(even){background-color: #f2f2f2}
+                    .sampleTable th {
+                    background-color: #4CAF50;
+                    color: white;
+                    }
+                </style>
+
+                <h1>HTML Example</h1>
+                <p>
+                    This is an example of formatted text:&#160;
+                    <strong>Pellentesque habitant morbi tristique</strong>
+                    senectus et
+                    <em>aenean ultricies mi vitae est</em>
+                    netus et
+                    <code>commodo vitae</code>
+                    , malesuada fames ac turpis egestas.
+                    <a href="#">Donec non enim</a>
+                    in turpis pulvinar facilisis. Ut felis.
+                </p>
+                <h2>This is header Level 2</h2>
+                <ol>
+                    <li>This is an item in an ordered list</li>
+                    <li>This is another item in an ordered list</li>
+                </ol>
+                <blockquote>
+                    <p>This is a blockquote: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+                </blockquote>
+                <h3>This is header Level 3</h3>
+                <ul>
+                    <li>This is an item in an unordered list</li>
+                    <li>This is another item in an unordered list</li>
+                </ul>
+                <h2>Example of HTML form:</h2>
+                <form action="#" method="post">
+                    <div>
+                        <label for="name">Text Input:</label>
+                        <input
+                            id="name"
+                            name="name"
+                            tabindex="1"
+                            type="text"
+                            value="" />
+                    </div>
+                    <div>
+                        <p>
+                            Radio Button Choice:&#160;
+                            <label for="radio-choice-1">Choice 1</label>
+                            <input
+                                id="radio-choice-1"
+                                name="radio-choice-1"
+                                tabindex="2"
+                                type="radio"
+                                value="choice-1" />
+                            <label for="radio-choice-2">Choice 2</label>
+                            <input
+                                id="radio-choice-2"
+                                name="radio-choice-2"
+                                tabindex="3"
+                                type="radio"
+                                value="choice-2" />
+                        </p>
+                    </div>
+                    <div>
+                        <label for="select-choice">Select Dropdown Choice:</label>
+                        <select id="select-choice" name="select-choice">
+                            <option value="Choice 1">Choice 1</option>
+                            <option value="Choice 2">Choice 2</option>
+                            <option value="Choice 3">Choice 3</option>
+                        </select>
+                        &#160;
+                    </div>
+                    <div>
+                        <label for="checkbox">Checkbox:</label>
+                        <input
+                            id="checkbox"
+                            name="checkbox"
+                            type="checkbox" />
+                    </div>
+                </form>
+                <h2>Example of HTML table:</h2>
+                <table class="sampleTable">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Example</th>
+                        <th>Foo</th>
+                    </tr>
+                    <tr>
+                        <td>tag attributes</td>
+                        <td>
+                            You can use tag attributes: example-
+                            <em>example&#160;</em>
+                            <strong>example</strong>
+                            -
+                            <em>test</em>
+                        </td>
+                        <td>&#160;</td>
+                    </tr>
+                    <tr>
+                        <td>inline styles</td>
+                        <td>
+                            <span style="color: green; font-size: 13px;">
+                                You can use
+                                <strong style="color: blue; text-decoration: underline;">inline styles</strong>
+                            </span>
+                        </td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>classes and IDs</td>
+                        <td>
+                            <span id="demoId">
+                                This span has an ID
+                                <strong class="demoClass">And this portion has a class</strong>
+                                .
+                            </span>
+                        </td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>successive &amp;#160;s</td>
+                        <td>Here are some spaces:&#160;&#160;&#160;&#160;&#160;&#160;&#160;end of spaces</td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>span tags</td>
+                        <td>
+                            This is an
+                            <span style="color: green; font-size: 13px;">example of span with tags</span>
+                        </td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>links</td>
+                        <td>
+                            <a href="http://www.cshtml5.com">This is</a>
+                            an example of link.
+                        </td>
+                        <td>&#160;</td>
+                    </tr>
+                    <tr>
+                        <td>comments</td>
+                        <td>
+                            After this text there is a comment that is only visible by looking at the source
+                            <!--  This is a comment!  -->
+                        </td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Encoding special characters</td>
+                        <td>
+                            <span style="color: red; font-size: 17px;">&#9829;</span>
+                            <strong style="font-size: 20px;">? ?</strong>
+                            &gt;&lt;
+                        </td>
+                        <td>
+                            <strong style="font-size: 17px; color: #2b2301;">x</strong>
+                        </td>
+                    </tr>
+                </table>
+
+            </native:HtmlPresenter>
+        </Border>
+
+    </Grid>
+</UserControl>

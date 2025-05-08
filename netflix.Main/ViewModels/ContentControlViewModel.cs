@@ -10,27 +10,10 @@ using System.Threading.Tasks;
 
 namespace netflix.Main.ViewModels
 {
-    public partial class parentab : ObservableObject
-    {
-        [ObservableProperty]
-        private string _name = string.Empty;
-
-        [ObservableProperty]
-        private bool _isSelected;
-    }
-    public partial class b : parentab
-    {
-
-    }
-
-    public partial class a : parentab
-    {
-
-    }
     public partial class ContentControlViewModel : ViewModelBase
     {
         [ObservableProperty]
-        public partial ObservableCollection<parentab> As { get; set; } = new();
+        public partial ObservableCollection<Parentab> As { get; set; } = new();
 
         public ContentControlViewModel()
         {
@@ -52,5 +35,23 @@ namespace netflix.Main.ViewModels
         {
             As.Add(new b() { IsSelected = true, Name = "bbbbbb" });
         }
+    }
+
+    public partial class Parentab : ObservableObject
+    {
+        [ObservableProperty]
+        private string _name = string.Empty;
+
+        [ObservableProperty]
+        private bool _isSelected;
+    }
+    public partial class b : Parentab
+    {
+
+    }
+
+    public partial class a : Parentab
+    {
+
     }
 }

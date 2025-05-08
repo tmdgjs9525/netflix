@@ -6,6 +6,8 @@
         public const string ProfileSelectionView = nameof(ProfileSelectionView);
         public const string AddProfileDialogView = nameof(AddProfileDialogView);
         public const string ContentControlView = nameof(ContentControlView);
+        public const string HtmlPresenterView = nameof(HtmlPresenterView);
+
 
         public const string MainView = nameof(MainView);
 

@@ -50,6 +50,12 @@ namespace netflix.Main.ViewModels
         }
 
         [RelayCommand]
+        private void GoHtmlPresenter()
+        {
+            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.HtmlPresenterView);
+        }
+
+        [RelayCommand]
         private void SelectProFile()
         {
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.ProfileSelectionView);

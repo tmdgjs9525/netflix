@@ -30,6 +30,7 @@ namespace netflix.Login.ViewModels
             _navigationService = navigationService;
             _dialogService = dialogService;
             _appState = appState;
+            
         }
 
         [RelayCommand]
