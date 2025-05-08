@@ -52,7 +52,7 @@ namespace netflix.Main.ViewModels
         [RelayCommand]
         private void GoHtmlPresenter()
         {
-            _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.HtmlPresenterView);
+            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.HtmlPresenterView);
         }
 
         [RelayCommand]
