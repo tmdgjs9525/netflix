@@ -95,8 +95,14 @@
                     Content="홈"
                     Style="{StaticResource menuButton}" />
                 <RadioButton Content="시리즈" Style="{StaticResource menuButton}" />
-                <RadioButton Content="영화" Style="{StaticResource menuButton}" Command="{Binding GoHtmlPresenterCommand}"/>
-                <RadioButton Content="NEW! 요즘 대세 콘텐츠" Command="{Binding GoContentControlCommand}" Style="{StaticResource menuButton}" />
+                <RadioButton
+                    Command="{Binding GoHtmlPresenterCommand}"
+                    Content="영화"
+                    Style="{StaticResource menuButton}" />
+                <RadioButton
+                    Command="{Binding GoContentControlCommand}"
+                    Content="NEW! 요즘 대세 콘텐츠"
+                    Style="{StaticResource menuButton}" />
                 <RadioButton
                     Command="{Binding GoBookMarkedCommand}"
                     Content="내가 찜한 리스트"
@@ -109,7 +115,19 @@
                 Grid.Column="1"
                 Margin="0,0,0,0"
                 HorizontalAlignment="Right"
-                VerticalAlignment="Top">
+                VerticalAlignment="Top"
+                Orientation="Horizontal">
+
+                <HyperlinkButton
+                    Margin="0,0,20,0"
+                    Content="GitHub"
+                    NavigateUri="https://github.com/tmdgjs9525/netflix" />
+
+                <HyperlinkButton
+                    Margin="0,0,20,0"
+                    Content="OpenSilver"
+                    NavigateUri="https://opensilver.net/" />
+
                 <support:Profile
                     Width="50"
                     Click="Profile_Click"
