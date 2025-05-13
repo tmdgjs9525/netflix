@@ -56,6 +56,12 @@ namespace netflix.Main.ViewModels
         }
 
         [RelayCommand]
+        private void GoSeries()
+        {
+            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.SeriesView);
+        }
+
+        [RelayCommand]
         private void SelectProFile()
         {
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.ProfileSelectionView);

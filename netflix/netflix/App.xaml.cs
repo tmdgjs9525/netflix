@@ -90,8 +90,9 @@ namespace netflix
 
             services.AddTransientNavigation<LoginView, LoginViewModel>();
             services.AddTransientNavigation<ProfileSelectionView, ProfileSelectionViewModel>();
-            services.AddTransientDialog<AddProfileDialogView, AddProfileDialogViewModel>();
             services.AddTransientNavigation<HtmlPresenterView, HtmlPresenterViewModel>();
+            services.AddTransientNavigation<SeriesView,SeriesViewModel>();
+            services.AddTransientDialog<AddProfileDialogView, AddProfileDialogViewModel>();
 
             services.AddSingletonNavigation<MainView, MainViewModel>();
             services.AddSingletonNavigation<MainContentView, MainContentViewModel>();

@@ -94,7 +94,7 @@
                     Command="{Binding GoHomeCommand}"
                     Content="홈"
                     Style="{StaticResource menuButton}" />
-                <RadioButton Content="시리즈" Style="{StaticResource menuButton}" />
+                <RadioButton Content="시리즈" Command="{Binding GoSeriesCommand}" Style="{StaticResource menuButton}" />
                 <RadioButton
                     Command="{Binding GoHtmlPresenterCommand}"
                     Content="영화"
