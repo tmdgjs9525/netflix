@@ -10,18 +10,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 
-namespace netflix.Login.Views
+namespace netflix.Main.Views
 {
-    public partial class test : Page
+    public partial class AiTestView : UserControl
     {
-        public test()
+        public AiTestView()
         {
             this.InitializeComponent();
-        }
-
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="netflix.Main.Views.AiTestView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:netflix.Main.Views">
+
+    <Grid Background="Gray" Margin="0,50,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" /> <!-- Left column for menu -->
+            <ColumnDefinition Width="*" /> <!-- Right column for content -->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Top row -->
+            <RowDefinition Height="*" />   <!-- Center row -->
+            <RowDefinition Height="Auto" /> <!-- Bottom row -->
+        </Grid.RowDefinitions>
+        
+        <!-- Navigation Menu on the Left Side -->
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#F0F0F0">
+            <TextBlock Text="Menu" FontWeight="Bold" Margin="8" />
+            <Button Content="Home" Margin="8" />
+            <Button Content="Series" Margin="8" />
+            <Button Content="Movies" Margin="8" />
+            <Button Content="My List" Margin="8" />
+        </StackPanel>
+        
+        <!-- Placeholder for other UI elements -->
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Top Content" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Center Content" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Bottom Content" />
+
+    </Grid>
+</UserControl>

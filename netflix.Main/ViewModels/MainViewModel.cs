@@ -58,7 +58,7 @@ namespace netflix.Main.ViewModels
         [RelayCommand]
         private void GoSeries()
         {
-            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.SeriesView);
+            _navigationService.NavigateTo(RegionNames.MainContentRegion, ViewNames.AiTestView);
         }
 
         [RelayCommand]

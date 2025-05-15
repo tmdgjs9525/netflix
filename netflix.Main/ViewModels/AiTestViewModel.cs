@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace netflix.Main.ViewModels
 {
-    public class SeriesViewModel : ViewModelBase
+    public class AiTestViewModel : ViewModelBase
     {
-        public SeriesViewModel()
+        public AiTestViewModel()
         {
             
         }

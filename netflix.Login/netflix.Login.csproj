@@ -15,7 +15,6 @@
     <Compile Include="Views\Dialogs\AddProfileDialogView.xaml.cs" />
     <Compile Include="Views\LoginView.xaml.cs" />
     <Compile Include="Views\ProfileSelectionView.xaml.cs" />
-    <Compile Include="Views\test.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,9 +32,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProfileSelectionView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\test.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
