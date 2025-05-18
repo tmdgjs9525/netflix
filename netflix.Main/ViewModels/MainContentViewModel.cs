@@ -19,14 +19,10 @@ namespace netflix.ViewModels
         private readonly IMediaInfoService _mediaInfoService;
 
         [ObservableProperty]
-        public partial MediaInfo RecommendedItem { get; set; }
+        public partial MediaInfo RecommendedVideo { get; set; }
 
         [ObservableProperty]
-        public partial ObservableCollection<RecommendationList>? RecommendationList { get; set; } = new ObservableCollection<RecommendationList>();
-
-
-        [ObservableProperty]
-        public partial RecommendationList Test { get; set; } = new RecommendationList();
+        public partial ObservableCollection<RecommendationList> VideoList { get; set; } = new ObservableCollection<RecommendationList>();
 
         public MainContentViewModel(IDialogService dialogService, INavigationService navigationService, IMediaInfoService mediaInfoService)
         {
@@ -40,7 +36,7 @@ namespace netflix.ViewModels
         {
             _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MoviePlayerView, new Parameters()
             {
-                { ParameterNames.MediaInfo, mediaInfo }
+                { ParameterNames.MediaInfo, RecommendedVideo }
             });
         }
 
@@ -50,23 +46,43 @@ namespace netflix.ViewModels
             _dialogService.ShowDialog(DialogNames.DetailMediaInfoDialogView, new Parameters()
             {
                 { ParameterNames.MediaInfo, item },
-                { ParameterNames.MediaInfoList, Test }
+                { ParameterNames.MediaInfoList, VideoList[0] }
             });
         }
 
         public async void NavigateTo(Parameters parameters)
         {
-            RecommendedItem = new MediaInfo
+            RecommendedVideo = new MediaInfo
             {
                 PosterUrl = "https://occ-0-4960-993.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABTtqEr23wkU_fY69qASaHlwsopBiJnEWX0kZJs1SPUljgU7dXT_wj_RUm9gTSbwhXB4wNcNm7ZYteEIxssmgXWQjIZC8qOvlAXXT.webp?r=6e4",
                 Description = "닥터 홈즈",
             };
 
-            Test = new RecommendationList
+            VideoList.Add(new RecommendationList
             {
-                RecommendationListName = "User를 위한 콘텐츠",
+                RecommendationListName = "추천 콘텐츠",
                 RecommendList = await _mediaInfoService.GetMediaInfosAsync()
-            };
+            });
+            VideoList.Add(new RecommendationList
+            {
+                RecommendationListName = "인기 콘텐츠",
+                RecommendList = await _mediaInfoService.GetMediaInfosAsync()
+            });
+            VideoList.Add(new RecommendationList
+            {
+                RecommendationListName = "내가 찜한 콘텐츠",
+                RecommendList = await _mediaInfoService.GetMediaInfosAsync()
+            });
+            VideoList.Add(new RecommendationList
+            {
+                RecommendationListName = "내가 시청한 콘텐츠",
+                RecommendList = await _mediaInfoService.GetMediaInfosAsync()
+            });
+            VideoList.Add(new RecommendationList
+            {
+                RecommendationListName = "내가 시청 중인 콘텐츠",
+                RecommendList = await _mediaInfoService.GetMediaInfosAsync()
+            });
         }
     }
 }

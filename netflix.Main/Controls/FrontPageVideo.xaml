@@ -13,14 +13,14 @@
 
         <Image
             Grid.RowSpan="2"
-            Source="{Binding RecommendedItem.PosterUrl}"
+            Source="{Binding RecommendedVideo.PosterUrl}"
             Stretch="UniformToFill" />
 
         <StackPanel Grid.Row="1" Margin="50,0,50,0">
             <TextBlock
                 FontSize="24"
                 Foreground="White"
-                Text="{Binding RecommendedItem.Description}" />
+                Text="{Binding RecommendedVideo.Description}" />
             <StackPanel Orientation="Horizontal">
                 <support:IconButton
                     Width="120"

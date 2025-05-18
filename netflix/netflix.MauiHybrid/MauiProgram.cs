@@ -25,7 +25,7 @@ namespace netflix.MauiHybrid
             builder.Services.AddMauiBlazorWebView();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
-            builder.Logging.AddDebug();
+            //builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
