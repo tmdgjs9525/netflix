@@ -8,8 +8,14 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Button Command="{Binding AddACommand}" Height="200" Content="Add A" />
-            <Button Command="{Binding AddBCommand}" Height="200" Content="Add B" />
+            <Button
+                Height="200"
+                Command="{Binding AddACommand}"
+                Content="Add A" />
+            <Button
+                Height="200"
+                Command="{Binding AddBCommand}"
+                Content="Add B" />
         </StackPanel>
 
         <ItemsControl
@@ -23,7 +29,7 @@
                         Background="Blue"
                         Content="{Binding .}">
                         <ContentControl.Resources>
-                            <DataTemplate x:Key="test" DataType="{x:Type vm:a}">
+                            <DataTemplate x:Key="a" DataType="{x:Type vm:ChildA}">
                                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                                     <RadioButton GroupName="MyRadio" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                     <TextBlock
@@ -34,8 +40,7 @@
                                         TextWrapping="Wrap" />
                                 </StackPanel>
                             </DataTemplate>
-
-                            <DataTemplate x:Key="testdata" DataType="{x:Type vm:b}">
+                            <DataTemplate x:Key="b" DataType="{x:Type vm:ChildB}">
                                 <Grid Margin="0">
 
                                     <TextBlock
@@ -43,7 +48,6 @@
                                         Foreground="Red"
                                         Text="{Binding Name, Mode=TwoWay}" />
                                 </Grid>
-
                             </DataTemplate>
                         </ContentControl.Resources>
                     </ContentControl>

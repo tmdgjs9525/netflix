@@ -19,21 +19,21 @@ namespace netflix.Main.ViewModels
         {
             for (int i = 0; i < 5; i++)
             {
-                As.Add(new a() { IsSelected = true, Name = "aaaaaaaa" });
-                As.Add(new b() { IsSelected = true, Name = "bbbbbb" });
+                As.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
+                As.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
             }
         }
 
         [RelayCommand]
         private void AddA()
         {
-            As.Add(new a() { IsSelected = true, Name = "aaaaaaaa" });
+            As.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
         }
 
         [RelayCommand]
         private void AddB()
         {
-            As.Add(new b() { IsSelected = true, Name = "bbbbbb" });
+            As.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
         }
     }
 
@@ -45,12 +45,12 @@ namespace netflix.Main.ViewModels
         [ObservableProperty]
         private bool _isSelected;
     }
-    public partial class b : Parentab
+    public partial class ChildB : Parentab
     {
 
     }
 
-    public partial class a : Parentab
+    public partial class ChildA : Parentab
     {
 
     }

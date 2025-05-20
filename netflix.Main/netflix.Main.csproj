@@ -4,8 +4,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
-	<LangVersion>preview</LangVersion>
-	<Nullable>enable</Nullable>
+	  <LangVersion>preview</LangVersion>
+	  <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +34,7 @@
     <Compile Include="Views\MainView.xaml.cs" />
     <Compile Include="Views\MoviePlayerView.xaml.cs" />
     <Compile Include="Views\AiTestView.xaml.cs" />
+    <Compile Include="Views\TestView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AiTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
