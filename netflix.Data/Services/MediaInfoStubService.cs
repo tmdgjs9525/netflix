@@ -1,4 +1,5 @@
 ﻿using netflix.Core.Models;
+using netflix.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

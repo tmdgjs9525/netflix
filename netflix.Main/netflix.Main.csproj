@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Module\Module.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Themes\UI\VideoPreview.cs" />
     <Compile Include="Controls\FrontPageVideo.xaml.cs" />
     <Compile Include="ViewModels\BookMarkedViewModel.cs" />

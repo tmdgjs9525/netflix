@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Module\Module.cs" />
     <Compile Include="ViewModels\Dialogs\AddProfileDialogViewModel.cs" />
     <Compile Include="ViewModels\ProfileSelectionViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

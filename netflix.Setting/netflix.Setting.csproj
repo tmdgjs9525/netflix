@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Module\Module.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="Views\SettingView.xaml.cs" />
   </ItemGroup>

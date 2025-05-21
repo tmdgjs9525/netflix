@@ -1,7 +1,7 @@
 ﻿using netflix.Core.Models;
 using System.Collections.ObjectModel;
 
-namespace netflix.Data.Services
+namespace netflix.Data.Interfaces
 {
     public interface IMediaInfoService
     {

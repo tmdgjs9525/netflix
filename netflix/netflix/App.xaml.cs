@@ -21,6 +21,10 @@ using netflix.ViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Net.Security;
+using netflix.Login.Module;
+using netflix.Main.Module;
+using netflix.Setting.Module;
 
 namespace netflix
 {
@@ -60,6 +64,9 @@ namespace netflix
             IServiceCollection services = new ServiceCollection();
 
             IServiceProvider provider = services.ConfigureViews()
+                                                .ConfigureLoginViews()
+                                                .ConfigureMainViews()
+                                                .ConfigureSettingViews()
                                                 .ConfigureServices()
                                                 .ConfigureUser()
                                                 .BuildServiceProvider();
@@ -88,23 +95,6 @@ namespace netflix
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
 
-            services.AddTransientNavigation<LoginView, LoginViewModel>();
-            services.AddTransientNavigation<ProfileSelectionView, ProfileSelectionViewModel>();
-            services.AddTransientNavigation<HtmlPresenterView, HtmlPresenterViewModel>();
-            services.AddTransientNavigation<AiTestView,AiTestViewModel>();
-            services.AddTransientDialog<AddProfileDialogView, AddProfileDialogViewModel>();
-
-            services.AddSingletonNavigation<MainView, MainViewModel>();
-            services.AddSingletonNavigation<MainContentView, MainContentViewModel>();
-            services.AddTransientNavigation<ContentControlView, ContentControlViewModel>();
-            services.AddTransientNavigation<BookMarkedView, BookMarkedViewModel>();
-
-            services.AddTransientNavigation<MoviePlayerView, MoviePlayerViewModel>();
-
-            services.AddTransientNavigation<SettingView, SettingViewModel>();
-
-
-            services.AddTransientDialog<DetailMediaInfoDialogView, DetailMediaInfoDialogViewModel>();
 
             return services;
         }

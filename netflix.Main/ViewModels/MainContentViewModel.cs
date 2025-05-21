@@ -4,7 +4,7 @@ using netflix.Core;
 using netflix.Core.Models;
 using netflix.Core.ParameterNames;
 using netflix.Core.Regions;
-using netflix.Data.Services;
+using netflix.Data.Interfaces;
 using netflix.Dialog;
 using netflix.ViewManager.Navigate;
 using netflix.ViewManager.Parameter;
