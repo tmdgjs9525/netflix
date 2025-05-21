@@ -21,7 +21,9 @@
 
             <support:PlaceHolderTextBox
                 Margin="0,20,0,0"
-                PlaceholderText="Nick Name" 
+                BorderBrush="White"
+                BorderThickness="1"
+                PlaceholderText="Nick Name"
                 Text="{Binding Profile.Name, Mode=TwoWay}" />
 
             <Button

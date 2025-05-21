@@ -94,7 +94,10 @@
                     Command="{Binding GoHomeCommand}"
                     Content="홈"
                     Style="{StaticResource menuButton}" />
-                <RadioButton Content="시리즈" Command="{Binding GoSeriesCommand}" Style="{StaticResource menuButton}" />
+                <RadioButton
+                    Command="{Binding GoSeriesCommand}"
+                    Content="시리즈"
+                    Style="{StaticResource menuButton}" />
                 <RadioButton
                     Command="{Binding GoHtmlPresenterCommand}"
                     Content="영화"
@@ -128,23 +131,24 @@
                     Content="OpenSilver"
                     NavigateUri="https://opensilver.net/" />
 
-                <support:Profile
-                    Width="50"
-                    Click="Profile_Click"
-                    DataContext="{Binding CurrentProfile}" />
-
-                <Popup x:Name="ProfilePopup" Placement="Bottom">
-                    <Border
-                        Background="{StaticResource MainBackgroundBrush}"
-                        BorderBrush="{StaticResource MainBackgroundBrush}"
-                        BorderThickness="1">
-                        <StackPanel Orientation="Vertical">
-                            <Button Command="{Binding ProfileSettingCommand}" Content="프로필 설정" />
-                            <Button Command="{Binding SelectProFileCommand}" Content="프로필 선택" />
-                            <Button Command="{Binding LogoutCommand}" Content="로그아웃" />
-                        </StackPanel>
-                    </Border>
-                </Popup>
+                <Grid>
+                    <support:Profile
+                        Width="50"
+                        Click="Profile_Click"
+                        DataContext="{Binding CurrentProfile}" />
+                    <Popup x:Name="ProfilePopup" Placement="Bottom">
+                        <Border
+                            Background="{StaticResource MainBackgroundBrush}"
+                            BorderBrush="{StaticResource MainBackgroundBrush}"
+                            BorderThickness="1">
+                            <StackPanel Orientation="Vertical">
+                                <Button Command="{Binding ProfileSettingCommand}" Content="프로필 설정" />
+                                <Button Command="{Binding SelectProFileCommand}" Content="프로필 선택" />
+                                <Button Command="{Binding LogoutCommand}" Content="로그아웃" />
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </Grid>
             </StackPanel>
         </Grid>
     </Border>
