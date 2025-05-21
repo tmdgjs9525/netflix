@@ -1,107 +1,68 @@
-# Netflix Clone
 
-OpenSilver/Silverlight 기반 넷플릭스 UI 클론 프로젝트입니다. 여러 플랫폼에서 동작하도록 설계되었으며, MVVM 아키텍처 패턴을 따릅니다.
+# 🎬 Netflix UI Clone with OpenSilver
 
-## 프로젝트 구조
+이 프로젝트는 **OpenSilver**를 사용하여 Netflix 스타일의 사용자 인터페이스를 웹 환경에서 구현한 클론 프로젝트입니다. WPF 개발자가 손쉽게 웹 프론트엔드를 만들 수 있도록 설계되었으며, MVVM 아키텍처를 기반으로 구성되어 있습니다.
 
-```
-netflix_/
-│
-├── netflix/ - 메인 애플리케이션 프로젝트
-│   ├── netflix/ - 핵심 UI 및 논리
-│   │   ├── Models/ - 데이터 모델
-│   │   ├── ViewModels/ - 뷰 모델
-│   │   ├── Views/ - 사용자 인터페이스
-│   │   │   ├── Main/ - 메인 화면 구성요소
-│   │   │   └── LoginView - 로그인 화면
-│   │   └── App.xaml - 애플리케이션 진입점
-│   │
-│   ├── netflix.Browser/ - 웹 브라우저 지원 프로젝트
-│   ├── netflix.Simulator/ - 시뮬레이터 환경
-│   └── netflix.MauiHybrid/ - .NET MAUI 하이브리드 지원
-│
-└── netflix.Core/ - 핵심 비즈니스 로직 및 공통 컴포넌트
-    ├── Dialog/ - 다이얼로그 관련 클래스
-    ├── Navigate/ - 내비게이션 시스템
-    ├── Parameter/ - 매개변수 처리
-    ├── Region/ - 영역 관리
-    └── ViewModelBase.cs - 기본 뷰모델 클래스
+---
+
+## 🧩 프로젝트 구성
 
 ```
-
-## 기술 스택
-
-- **프레임워크**: OpenSilver (Silverlight 호환)
-- **UI**: XAML
-- **패턴**: MVVM (Model-View-ViewModel)
-- **DI 컨테이너**: Microsoft.Extensions.DependencyInjection
-- **플랫폼 지원**:
-  - 웹 브라우저 (.Browser)
-  - 데스크톱 시뮬레이터 (.Simulator)
-  - 모바일 앱 (.MauiHybrid)
-
-## 주요 기능
-
-- 사용자 인증 (로그인 화면)
-- 넷플릭스 스타일 메인 페이지
-- 비디오 프리뷰 및 재생
-- 카테고리별 콘텐츠 브라우징
-- 반응형 레이아웃
-
-## 설치 및 실행 방법
-
-### 필수 조건
-
-- Visual Studio 2022 이상
-- .NET 기반 개발 환경
-- OpenSilver 확장
-
-### 개발 환경 설정
-
-1. 저장소 클론:
-```
-git clone https://github.com/[username]/netflix_.git
+netflix/
+├── netflix/                    # 메인 OpenSilver 프로젝트
+│   ├── Views/                  # MainPage.xaml 기반의 UI
+│   ├── ViewModels/             # MainPageViewModel.cs (MVVM 구조)
+│   ├── Converter/              # IValueConverter 관련 변환기
+│   ├── Helper/                 # 헬퍼 클래스 및 유틸리티
+│   ├── Assets/                 # 이미지 및 정적 리소스
+│   ├── App.xaml                # 전역 리소스 및 진입점
+│   ├── Colors.xaml, Geometries.xaml # 스타일 리소스
+├── netflix.Browser/            # WebAssembly 기반 실행 대상
+├── netflix.Simulator/          # 데스크톱 실행용 시뮬레이터
+├── netflix.MauiHybrid/         # .NET MAUI 하이브리드 앱 버전
+├── netflix.Core/               
+├── netflix.Login/             
+├── netflix.Main/
+├── netflix.Setting/                 
+├── netflix.Data/              
+├── netflix.ViewManager/        # 뷰 매니저 로직
+├── netflix.Support/            # 공통 컨트롤 및 유틸리티 및 확장 기능          
+├── NuGet.Config                # NuGet 구성
+└── netflix.sln                 # Visual Studio 솔루션 파일
 ```
 
-2. Visual Studio에서 `netflix.sln` 파일 열기
+---
 
-3. 솔루션 빌드:
-```
-Right-click Solution > Build Solution
-```
+## ✨ 주요 기능
 
-4. 실행 방법:
-   - 브라우저에서 실행: `netflix.Browser` 프로젝트를 시작 프로젝트로 설정
-   - 시뮬레이터에서 실행: `netflix.Simulator` 프로젝트를 시작 프로젝트로 설정
-   - MAUI 하이브리드 앱으로 실행: `netflix.MauiHybrid` 프로젝트를 시작 프로젝트로 설정
+- **OpenSilver 기반 UI 구성**  
+  - WPF와 동일한 XAML 문법으로 웹 앱 개발 가능  
 
-## 아키텍처 설명
+- **MVVM 아키텍처 적용**  
+  - ViewModel을 통해 로직 분리 및 테스트 용이
 
-### 네비게이션 시스템
+- **멀티 타겟 실행**  
+  - 브라우저(WebAssembly), 데스크톱(Simulator), MAUI 하이브리드 지원
 
-프로젝트는 커스텀 네비게이션 시스템을 구현하여 여러 뷰 간의 전환을 관리합니다. `INavigationRegister`와 같은 인터페이스를 통해 뷰와 뷰모델 간의 연결을 등록하고, 애플리케이션의 네비게이션 상태 변경에 따라 적절한 컨텐츠를 표시합니다.
+---
 
-### 의존성 주입
+## ▶ 실행 방법
 
-`CommunityToolkit.Mvvm.DependencyInjection`과 `Microsoft.Extensions.DependencyInjection`을 사용하여 서비스 및 뷰모델의 의존성을 관리합니다. `App.xaml.cs`의 `serviceInitialize()` 메서드에서 의존성 주입을 설정합니다.
+1. **사전 요구 사항**
+   - [.NET 9 SDK 이상](https://dotnet.microsoft.com/)  
+   - Visual Studio 2022 + OpenSilver 확장 설치
 
-### 뷰모델 구성
+2. **실행 절차**
+   ```bash
+   git clone https://github.com/tmdgjs9525/netflix.git
+   cd netflix
+   ```
 
-모든 뷰모델은 `ViewModelBase`를 상속받아 공통 기능을 제공받으며, MVVM 패턴에 따라 뷰와 모델 사이의 중재자 역할을 합니다.
+3. Visual Studio로 `netflix.sln` 열기
 
-## 기여 방법
+4. `netflix.Browser` 또는 `netflix.Simulator`를 시작 프로젝트로 설정 후 실행 (`Ctrl + F5`)
 
-1. 이 저장소를 포크합니다.
-2. 새 기능 브랜치를 생성합니다: `git checkout -b feature/amazing-feature`
-3. 변경 사항을 커밋합니다: `git commit -m 'Add some amazing feature'`
-4. 브랜치에 푸시합니다: `git push origin feature/amazing-feature`
-5. Pull Request를 제출합니다.
+---
 
-## 라이선스
-
-이 프로젝트는 [라이선스 명시 필요] 라이선스 하에 배포됩니다.
-
-## 감사의 말
-
-- OpenSilver 팀
-- 넷플릭스 UI 디자인 영감
+## 📷 미리보기
+https://opensilverflix.netlify.app/
