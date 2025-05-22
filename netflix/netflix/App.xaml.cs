@@ -25,6 +25,7 @@ using System.Net.Security;
 using netflix.Login.Module;
 using netflix.Main.Module;
 using netflix.Setting.Module;
+using System.Windows.Interop;
 
 namespace netflix
 {
@@ -46,6 +47,9 @@ namespace netflix
             Window.Current.Content = mainPage;
 
             Startup += App_Startup;
+
+            //Application.Current.Host.NavigationStateChanged += Host_NavigationStateChanged;
+
         }
 
         private async void App_Startup(object sender, StartupEventArgs e)
