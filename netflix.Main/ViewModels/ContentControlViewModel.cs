@@ -13,27 +13,27 @@ namespace netflix.Main.ViewModels
     public partial class ContentControlViewModel : ViewModelBase
     {
         [ObservableProperty]
-        public partial ObservableCollection<Parentab> As { get; set; } = new();
+        public partial ObservableCollection<Parentab> Items { get; set; } = new();
 
         public ContentControlViewModel()
         {
             for (int i = 0; i < 5; i++)
             {
-                As.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
-                As.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
+                Items.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
+                Items.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
             }
         }
 
         [RelayCommand]
         private void AddA()
         {
-            As.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
+            Items.Add(new ChildA() { IsSelected = true, Name = "aaaaaaaa" });
         }
 
         [RelayCommand]
         private void AddB()
         {
-            As.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
+            Items.Add(new ChildB() { IsSelected = true, Name = "bbbbbb" });
         }
     }
 

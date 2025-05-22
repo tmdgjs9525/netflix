@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="Geometries.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <!--<FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium</FontFamily>-->
+            <FontFamily x:Key="MainFont">/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium</FontFamily>
 
             <Style x:Key="page" TargetType="Page">
                 <Setter Property="FontFamily" Value="{DynamicResource MainFont}" />

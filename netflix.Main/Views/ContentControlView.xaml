@@ -21,7 +21,7 @@
         <ItemsControl
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            ItemsSource="{Binding As}">
+            ItemsSource="{Binding Items}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <ContentControl

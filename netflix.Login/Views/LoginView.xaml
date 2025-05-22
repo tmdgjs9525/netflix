@@ -29,7 +29,6 @@
             <StackPanel Margin="68,0,68,0">
                 <TextBlock
                     Margin="0,40,0,28"
-                    FontFamily="{StaticResource MainFont}"
                     FontSize="32"
                     FontWeight="Bold"
                     Foreground="White"

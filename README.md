@@ -66,3 +66,4 @@ netflix/
 
 ## 📷 미리보기
 https://opensilverflix.netlify.app/
+https://shmagicconch.netlify.app/

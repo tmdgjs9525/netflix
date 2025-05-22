@@ -50,7 +50,7 @@ namespace netflix
 
         private async void App_Startup(object sender, StartupEventArgs e)
         {
-            await LoadFonts();
+            //await LoadFonts();
 
             var user = Ioc.Default.GetRequiredService<User>();
 
@@ -76,11 +76,9 @@ namespace netflix
             return provider;
         }
 
-        //App.xaml 리소스에 폰트를 등록하게 되면 페이지 로드후에 폰트가 적용되기 때문에 
-        //미리 폰트를 로드합니다.
         private static async Task LoadFonts()
         {
-            await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", fontName: "MainFont");
+           await FontHelper.LoadFont("/netflix;component/Assets/Fonts/GmarketSansTTFMedium.ttf#G마켓 산스 TTF Medium", fontName: "MainFont");
         }
     }
 
