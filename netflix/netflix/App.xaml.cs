@@ -52,6 +52,11 @@ namespace netflix
 
         }
 
+        private void Host_NavigationStateChanged(object sender, NavigationStateChangedEventArgs e)
+        {
+            // _navigationService.NavigateTo(RegionNames.MainRegion, e.State);
+        }
+
         private async void App_Startup(object sender, StartupEventArgs e)
         {
             //await LoadFonts();
