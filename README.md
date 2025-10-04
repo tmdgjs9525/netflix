@@ -1,3 +1,5 @@
+## 📷 미리보기
+https://opensilverflix.netlify.app/
 
 # 🎬 Netflix UI Clone with OpenSilver
 
@@ -64,7 +66,4 @@ netflix/
 
 ---
 
-## 📷 미리보기
-https://opensilverflix.netlify.app/
 
-https://shmagicconch.netlify.app/
